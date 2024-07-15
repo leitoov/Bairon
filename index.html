@@ -41,20 +41,136 @@
       font-size: 36px;
       margin-left: 50px;
     }
+    .prev-form{
+      position: relative;
+      text-align: center;
+    }
+    .prev-form>h1{
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      font-size: 3rem;
+      transform: translate(-0%,-50%);
+      color: white;
+      width: 100%;
 
+    }
+    .prev-form>img{
+      
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .form{
+      display: flex;
+      height: 90vh;
+      justify-content: center;
+      flex-direction: column;
+     
+    }
+    .grid-container {
+    display: grid;
+    width: 50%;
+    margin:0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px; /* Puedes ajustar el espacio entre los elementos */
+}
+.full-span {
+    grid-column: span 2;
+}
+
+input, textarea {
+    background: #C7AFE9;
+    border:none;
+    margin: 5 px;
+   
+    -webkit-box-shadow: -1px 0px 0px 3px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 0px 0px 3px rgba(0,0,0,1);
+    box-shadow: -1px 0px 0px 3px rgba(0,0,0,1);
+    width: 100%;
+    padding: 20px;
+  
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+button {
+  
+    margin: 20px auto;
+    padding: 15px 40px;
+    background-color: #FFD015 ;
+    color: #333;
+    font-weight: 600;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+footer{
+  background: #A4C8BA;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+footer>div{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+footer>div>ul>li{
+  list-style-type: none;
+  font-weight: bold;
+  margin: 10px 0;
+}
+footer>div>ul{
+  margin: auto 0;
+  display:flex;
+  gap: 10px;
+}
+.icon{
+  gap: 20px;
+}
+.icon>img{
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+div>p{
+ font-size: 12px;
+ font-weight: 600;
+ text-align: left;
+ margin: 10px 10px;
+}
+.icon{
+  display: flex;
+}
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
       .sidenav a {font-size: 18px;}
     }
+    
   </style>
 </head>
 <body>
   <div id="app">
     <header-component></header-component>
+    <div class="prev-form">
+     <img src="../prev-form.svg" alt="Img">
+     <h1>CONSEGUÍ TU BOARDING PASS</h1>
+   </div>
+    <formulario-component></formulario-component>
+    <footer-component></footer-component>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="components/header-component.js"></script>
+  <script src="components/footer-component.js"></script>
+  <script src="components/formulario-component.js"></script>
   <script>
     new Vue({
       el: '#app'
