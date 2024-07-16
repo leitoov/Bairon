@@ -8,6 +8,10 @@ Vue.component('card-component', {
             type: String,
             required: true
         },
+        color: {
+            type: String,
+            required: true
+        },
         buttonText: {
             type: String,
             default: 'Principal'
