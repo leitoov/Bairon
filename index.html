@@ -11,8 +11,11 @@
       font-family: "Lato", sans-serif;
       cursor: url('./images/cursor.png'), auto
     }
+    .fondo{
+      background-image: url('./images/fondo.png');
+    }
     .container{
-      max-width: 100%;
+      max-width: 100%!important;
     }
 
     .sidenav {
@@ -26,6 +29,13 @@
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
+    }
+    h1{
+      font-size: 84px;
+      color: white;
+      font-weight: 700;
+      margin-top: 5%;
+      margin-left: 5%;
     }
 
     .sidenav a {
@@ -203,7 +213,20 @@
 </head>
 <body>
   <div id="app">
-    <header-component></header-component>
+    <div class="fondo">
+      <header-component></header-component>
+      <div>
+        <h1>
+          Bienvenidos<br> 
+          al planeta<br>
+          BAIRON
+        </h1>
+      </div>
+      <div style="margin-left: 5%; padding-bottom: 4%;">
+        <button style="font-size: 18px;font-weight: 400; border-radius: 8px;width: 209px;height: 65px;">Contactános</button>
+        <button style="font-size: 18px;font-weight: 400;margin-left: 1%;border-radius: 8px;width: 209px;height: 65px; border:1px solid white; color:white;background-color: transparent;">Ver más</button>
+      </div>
+    </div>
 <!--
     <card-component
     title="Título del Card"
