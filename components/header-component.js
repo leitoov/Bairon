@@ -10,11 +10,11 @@ Vue.component('header-component', {
         <a href="#">Contact</a>
       </div>
       <div class="row">
-        <div class="col text-justify">
+        <div class="col" style="align-items: end; display: flex; margin: auto;">
           <img src="./images/Logo.svg"/>
         </div>
         
-        <div class="col">
+        <div class="col" style="justify-content: end;display: flex;margin: auto;">
           <span style="font-size:30px;cursor:pointer" @click="openNav">&#9776;</span>
         </div>
       </div>
