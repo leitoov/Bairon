@@ -58,6 +58,93 @@
       font-size: 36px;
       margin-left: 50px;
     }
+    /*cards*/
+    
+    /*banner*/
+.nuestro-impacto{
+  width: 90%;
+  margin: 5rem auto;
+  font-weight: bold;
+
+}
+.banner {
+  border: 1px solid #333;
+  box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+  border-radius: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  background: #A4C8BA;
+  justify-content: center;
+}
+
+.banner-logo,
+.banner > button {
+  position: absolute;
+  background-position: center;
+  background-size:contain;
+}
+
+.banner-logo {
+  width: 60px;
+  height: 60px;
+  background-image: url("images/AntartidaLogo.svg");
+  top: 1rem;
+  left: 3rem;
+}
+
+.banner > button {
+  border:none;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url(./images/Flecha.svg);
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer > h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.titleContainer > p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.banner-img-container {
+  display: flex;
+  width: 50%;
+  align-items: flex-end;
+  gap: 0 10px;
+}
+
+.banner-img {
+  width: 30%;
+  height: 332px;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("images/Antartida.svg");
+}
+
+.banner-img-container .banner-img:nth-child(2) {
+  height: 370px;
+}
+
+    /*marcas*/
     .marcas-component{
       height: 100vh;
       margin: 2rem;
@@ -89,27 +176,13 @@
       object-fit: cover;
     }
  
-    .prev-form {
-      position: relative;
-      text-align: center;
-    }
-
-    .prev-form>h1 {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      font-size: 3rem;
-      transform: translate(-0%, -50%);
-      color: white;
-      width: 100%;
-    }
-
+  
     .prev-form>img {
       max-width: 100%;
       height: auto;
       object-fit: contain;
     }
-
+    /*Formulario (Hay que separarlo porq pisara cosas a futuro)*/
     .form {
       display: flex;
       height: 90vh;
@@ -144,7 +217,7 @@
       height: 100px;
     }
 
-    button {
+     .form>button {
       margin: 20px auto;
       padding: 15px 40px;
       background-color: #FFD015;
@@ -153,7 +226,7 @@
       border: 1px solid #333;
       cursor: pointer;
     }
-
+    /*footer*/
     footer {
       background: #A4C8BA;
       min-height: 150px;
@@ -236,6 +309,19 @@
 >
 </card-component>-->
 
+    <div class="container">
+      
+      <h2 class="nuestro-impacto">
+        Nuestro Impacto
+      </h2>
+      <banner-component
+       title="+150%"
+       content="Aumento de conversiones en 6 meses"
+      
+       >
+     
+      </banner-component>
+    </div>
     <marcas-component></marcas-component>
     <div class="prev-form">
       <img src="./images/background-img.svg" alt="Img">
@@ -251,6 +337,7 @@
   <script src="components/formulario-component.js"></script>
   <script src="components/marcas-component.js"></script>
   <script src="components/card-component.js"></script>
+  <script src="components/banner-component.js"></script>
   <script>
     new Vue({
       el: '#app'
