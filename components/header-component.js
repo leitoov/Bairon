@@ -15,7 +15,7 @@ Vue.component('header-component', {
         </div>
         
         <div class="col" style="justify-content: end;display: flex;margin: auto;">
-          <span style="font-size:30px;cursor:pointer" @click="openNav">&#9776;</span>
+          <span style="font-size:30px;cursor:pointer;color: white;" @click="openNav">&#9776;</span>
         </div>
       </div>
     </div>
