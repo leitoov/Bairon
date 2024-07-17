@@ -2,7 +2,7 @@ Vue.component('header-component', {
   template: `
 
     <div class="container text-center">
-      <div id="mySidenav" class="sidenav">
+      <div id="mySidenav" class="sidenav text-justify">
         <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
         <a href="#">About</a>
         <a href="#">Services</a>
@@ -11,7 +11,7 @@ Vue.component('header-component', {
       </div>
       <div class="row">
         <div class="col">
-          LOGO
+          <img src="./images/Logo.svg"/>
         </div>
         
         <div class="col">
