@@ -22,17 +22,15 @@ Vue.component('card-component', {
         }
     },
     template: `
-        <div class="card-container">
-            <div class="card">
-                <div>
-                    <h1>{{ title }}</h1>
-                    <p>{{ content }}</p>
-                    <button>{{ buttonText }}</button>
-                </div>
-                <div>
-                    <img :src="imageUrl" alt="Imagen">
-                </div>
-            </div>
+    <div :style="{ backgroundColor: color }" class="card">
+        <div class="card-content">
+            <h2>{{ title }}</h2>
+            <p>{{ content }}</p>
+            <button>{{ buttonText }}</button>
         </div>
+        <div class="card-img">
+            <img :src="{imageUrl}" alt="Card Image">
+        </div>
+    </div>
     `
 });
