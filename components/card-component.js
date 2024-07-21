@@ -26,11 +26,19 @@ Vue.component('card-component', {
         <div class="card-content">
             <h2>{{ title }}</h2>
             <p>{{ content }}</p>
-            <button>{{ buttonText }}</button>
+            <ui-button class="beige">{{ buttonText }}</ui-button>
         </div>
         <div class="card-img">
-            <img :src="{imageUrl}" alt="Card Image">
+            <img src="./images/cardImg1.svg" :alt="imageUrl">
         </div>
     </div>
-    `
+    `,
+    mounted() {
+        this.logImageUrl();
+    },
+    methods: {
+        logImageUrl() {
+            console.log('imageUrl:', this.imageUrl);
+        }
+    }
 });
