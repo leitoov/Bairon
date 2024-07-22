@@ -17,6 +17,9 @@
     .fondo {
       background-image: url('./images/fondo.png');
     }
+    .w3-animate-top{
+      background-image: url('./images/fondoArticle.png');
+    }
 
     .container {
       max-width: 100% !important;
@@ -72,12 +75,29 @@
     /* Cards */
     .card-stack {
   position: relative;
-  height: 600px; /* Ajusta según el tamaño de tus tarjetas */
+  height: 600px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.card-simple{
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  display: flex;
+  margin: 60px 0px 60px 0px;
 
+
+}
+.simple{
+  box-shadow: none !important;
+    margin: 0rem !important;
+    background-color: #FFC70080;
+    height: 300px !important;
+    border: none !important;
+  
+}
 .card {
   position: absolute;
   transition: all 0.5s ease;
@@ -91,6 +111,11 @@
   width: 90%;
   height: auto;
   align-items: center;
+}
+.card>.card-content-simple {
+  font-size: 32px;
+  text-align: center;
+  margin: 0px 20% 0px 20%;
 }
 
 .card>.card-content {
@@ -125,7 +150,13 @@
   justify-content: center;
   align-items: center;
 }
-
+.card-simple>img{
+  position: absolute;
+    z-index: 1;
+    display: flex;
+    top: -13%;
+    left: 2%;
+}
 .card>.card-img>img {
   width: 40%;
   height: 75%;
@@ -372,10 +403,18 @@
       <div style="margin-left: 5%; padding-bottom: 4%;">
         <ui-button style="margin-right: 30px;" :key="'yellow'" button-type="yellow">Contactános</ui-button>
         <ui-button :key="'transparent'" button-type="transparent">Ver más</ui-button>
-
       </div>
     </div>
     <div>
+      <div class="card-simple">
+        <img src="./images/estrellas.svg"/>
+        <div class="card simple">
+          <div class="card-content-simple">
+            <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
+              el distintivo toque de Bairon Media Content.</h4>
+          </div>
+        </div>
+      </div>
 
 
 
