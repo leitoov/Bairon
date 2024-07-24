@@ -169,101 +169,117 @@ h4{
   object-fit: cover;
 }
 
+/* Banner */
+.nuestro-impacto {
+  width: 90%;
+  margin: 5rem auto;
+  font-weight: bold;
+}
+.carousel-banner-container{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  margin-top: 2rem;
+}
+.banner {
+  border: 1px solid #333;
+  box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+  border-radius: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-    /* Banner */
-    .nuestro-impacto {
-      width: 90%;
-      margin: 5rem auto;
-      font-weight: bold;
-    }
+.banner.active {
+  opacity: 1;
+}
 
-    .banner {
-      border: 1px solid #333;
-      box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
-      border-radius: 1rem;
-      width: 90%;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
+.banner-logo,
+.banner>button {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+}
 
-      justify-content: center;
-    }
+.banner-logo {
+  width: 5rem;
+  height: auto;
+  top: 2rem;
+  left: 5rem;
+}
 
-    .banner-logo,
-    .banner>button {
-      position: absolute;
-      background-position: center;
-      background-size: cover;
-    
-    }
+.banner-logo>img {
+  object-fit: cover;
+  width: 100%;
+}
 
-    .banner-logo {
-      width: 5rem;
-      height: auto;
+.banner>button {
+  border: none;
+  border-radius: 100%;
+  z-index: 100;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-image: url("images/Flecha.svg");
+  right: 1rem;
+  bottom: 1rem;
+}
 
-      top: 2rem;
-      left: 5rem;
-    }
-    .banner-logo>img{
-      object-fit: cover;
-      width: 100%;
-    }
-    .banner>button {
-      border: none;
-      border-radius: 100%;
-      width: 2.5rem;
-      height: 2.5rem;
-      background-image: url("images/Flecha.svg");
-      right: 1rem;
-      bottom: 1rem;
-    }
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+}
 
-    .titleContainer {
-      display: flex;
-      flex-direction: column;
-      width: 40%;
-      justify-content: center;
-      align-items: center;
-    }
+.titleContainer>h1 {
+  margin: 0;
+  font-size: 5rem;
+  font-weight: 500;
+  color: #000000;
+}
 
-    .titleContainer>h1 {
-      margin: 0;
-      font-size: 5rem;
-      font-weight:500;
-      color: #000000;
-    }
+.titleContainer>p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  width: 50%;
+}
 
-    .titleContainer>p {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 400;
-      width:50%;
-    }
+.banner-img-container {
+  display: flex;
+  width: 50%;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-    .banner-img-container {
-      display: flex;
-      width: 50%;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+.banner-img {
+  width: 30%;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+}
 
-    .banner-img {
-      width: 30%;
-      margin: 2rem 0;
-      border-radius: 1rem;
-      display: flex;
-      justify-content: center;
-      }
+.banner-img {
+  margin: 2rem 0;
+  height: 75%;
+}
 
-    .banner-img{
-      margin: 2rem 0;
-      height: 75%;
-      }
-    .banner-img-container .banner-img:nth-child(2) {
-      height: 90%;
-      margin: 3rem 0;
-    }
+.banner-img-container .banner-img:nth-child(2) {
+  height: 90%;
+  margin: 3rem 0;
+}
+
 
     /* Marcas */
     .marcas-component {
@@ -440,7 +456,10 @@ h4{
       <h2 class="nuestro-impacto">
         Nuestro Impacto
       </h2>
-      <banner-component></banner-component>
+      <div class="carousel-banner-container">
+        <banner-component></banner-component>
+      </div>
+      
     </div>
 
     <marcas-component></marcas-component>
