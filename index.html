@@ -185,7 +185,7 @@ h4{
       margin: 0 auto;
       position: relative;
       display: flex;
-      background: #A4C8BA;
+
       justify-content: center;
     }
 
@@ -193,23 +193,27 @@ h4{
     .banner>button {
       position: absolute;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
+    
     }
 
     .banner-logo {
-      width: 60px;
-      height: 60px;
-      background-image: url("images/AntartidaLogo.svg");
-      top: 1rem;
-      left: 3rem;
-    }
+      width: 5rem;
+      height: auto;
 
+      top: 2rem;
+      left: 5rem;
+    }
+    .banner-logo>img{
+      object-fit: cover;
+      width: 100%;
+    }
     .banner>button {
       border: none;
       border-radius: 100%;
       width: 2.5rem;
       height: 2.5rem;
-      background-image: url(./images/Flecha.svg);
+      background-image: url("images/Flecha.svg");
       right: 1rem;
       bottom: 1rem;
     }
@@ -224,34 +228,41 @@ h4{
 
     .titleContainer>h1 {
       margin: 0;
-      font-size: 4rem;
-      font-weight: bold;
+      font-size: 5rem;
+      font-weight:500;
+      color: #000000;
     }
 
     .titleContainer>p {
       margin: 0;
-      font-size: 12px;
+      font-size: 20px;
+      font-weight: 400;
+      width:50%;
     }
 
     .banner-img-container {
       display: flex;
       width: 50%;
       align-items: flex-end;
-      gap: 0 10px;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .banner-img {
       width: 30%;
-      height: 332px;
-      margin: 1rem 0;
+      margin: 2rem 0;
       border-radius: 1rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url("images/Antartida.svg");
-    }
+      display: flex;
+      justify-content: center;
+      }
 
+    .banner-img{
+      margin: 2rem 0;
+      height: 75%;
+      }
     .banner-img-container .banner-img:nth-child(2) {
-      height: 370px;
+      height: 90%;
+      margin: 3rem 0;
     }
 
     /* Marcas */
@@ -429,7 +440,7 @@ h4{
       <h2 class="nuestro-impacto">
         Nuestro Impacto
       </h2>
-      <banner-component title="+150%" content="Aumento de conversiones en 6 meses"></banner-component>
+      <banner-component></banner-component>
     </div>
 
     <marcas-component></marcas-component>
