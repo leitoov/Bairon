@@ -8,19 +8,33 @@ Vue.component('banner-component', {
         imageUrl: "Antartida.svg",
         logoImg: "AntartidaLogo.svg"
       }, {
-        title: "+150%",
-        content: "Aumento de conversiones en 6 meses",
+        title: "otrbanner",
+        content: "Aumehgygyuiuhbu",
         color: "red",
+        imageUrl: "cardImg4.svg",
+        logoImg: "AntartidaLogo.svg"
+      },
+      {
+        title: "+10%",
+        content: "Aumento de conversiones en 6 meses",
+        color: "blue",
         imageUrl: "Antartida.svg",
         logoImg: "AntartidaLogo.svg"
+      }, {
+        title: "otro banner",
+        content: "Aumehgygyuiuhbu",
+        color: "gray",
+        imageUrl: "cardImg4.svg",
+        logoImg: "AntartidaLogo.svg"
       }],
-      currentItem: 0
+      currentItem: 0,
+      exitingItem: null // Para rastrear el banner que está saliendo
     }
   },
   template: `
-    <div v-if="banners.length > 0">
+    <div v-if="banners.length > 0" class="carousel-banner-container">
       <div v-for="(banner, index) in banners" :key="banner.title"
-        class="banner" :class="{ active: index === currentItem }"
+        class="banner" :class="{ active: index === currentItem, front: index === currentItem, back: index === (currentItem + 1) % banners.length, 'banner-exit': index === exitingItem }"
         :style="{ backgroundColor: banner.color }">
         <div class="banner-logo">          
           <img :src="getImageUrl(banner.logoImg)" :alt="banner.title">
@@ -39,9 +53,9 @@ Vue.component('banner-component', {
           <div class="banner-img">
             <img :src="getImageUrl(banner.imageUrl)" :alt="banner.title">
           </div>
-        </div><button @click="nextBanner" ></button>
-      </div> 
-     
+        </div>
+        <button @click="nextBanner"></button>
+      </div>
     </div>
   `,
   methods: {
@@ -49,7 +63,11 @@ Vue.component('banner-component', {
       return "./images/" + img;
     },
     nextBanner() {
-      this.currentItem = (this.currentItem + 1) % this.banners.length;
+      this.exitingItem = this.currentItem;
+      setTimeout(() => {
+        this.currentItem = (this.currentItem + 1) % this.banners.length;
+        this.exitingItem = null;
+      }, 500); // La duración de la transición
     }
   }
 });
