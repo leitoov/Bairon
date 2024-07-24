@@ -17,7 +17,8 @@
     .fondo {
       background-image: url('./images/fondo.png');
     }
-    .w3-animate-top{
+
+    .w3-animate-top {
       background-image: url('./images/fondoArticle.png');
     }
 
@@ -74,229 +75,239 @@
 
     /* Cards */
     .card-stack {
-  position: relative;
-  height: 600px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card-simple{
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 300px;
-  display: flex;
-  margin: 60px 0px 60px 0px;
+      position: relative;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-simple {
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 300px;
+      display: flex;
+      margin: 60px 0px 60px 0px;
 
 
-}
-.simple{
-  box-shadow: none !important;
-    margin: 0rem !important;
-    background-color: #FFC70080;
-    height: 300px !important;
-    border: none !important;
-  
-}
-.card {
-  position: absolute;
-  transition: all 0.5s ease;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 5rem auto;
-  border: 1px solid #333;
-  box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
-  border-radius: 1rem;
-  width: 90%;
-  height: auto;
-  align-items: center;
-}
-.card>.card-content-simple {
-  font-size: 32px;
-  text-align: center;
-  margin: 0px 10% 0px 10%;
-}
-h4{
-  font-size: 32px;
-  font-weight: 400;
-}
+    }
 
-.card>.card-content {
-  width: auto;
-  padding: 2rem 0 2rem 2rem;
-  display: flex;
-  width: 60%;
-  flex-direction: column;
-  justify-content: space-around;
-}
+    .simple {
+      box-shadow: none !important;
+      margin: 0rem !important;
+      background-color: #FFC70080;
+      height: 300px !important;
+      border: none !important;
 
-.card-content>h2 {
-  font-weight: bold;
-  font-size: 48px;
-  margin: 1rem 0;
-}
+    }
 
-.card-content>p {
-  font-size: 20px;
-}
+    .card {
+      position: absolute;
+      transition: all 0.5s ease;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin: 5rem auto;
+      border: 1px solid #333;
+      box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+      border-radius: 1rem;
+      width: 90%;
+      height: auto;
+      align-items: center;
+    }
 
-.card-content>button {
-  margin: 1rem auto;
-  border-radius: 0px;
-  border: 2px solid #333;
-}
+    .card>.card-content-simple {
+      font-size: 32px;
+      text-align: center;
+      margin: 0px 10% 0px 10%;
+    }
 
-.card>.card-img {
-  display: flex;
-  width: 40%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-.card-simple>img{
-  position: absolute;
-    z-index: 1;
-    display: flex;
-    top: -13%;
-    left: 2%;
-}
-.card>.card-img>img {
-  width: 40%;
-  height: 75%;
-  border-radius: 100px;
-  padding: 1rem 0;
-  object-fit: cover;
-}
-/* Banner */
-.nuestro-impacto {
-  width: 90%;
-  margin: 5rem auto;
-  font-weight: bold;
-}
+    h4 {
+      font-size: 32px;
+      font-weight: 400;
+    }
 
-.carousel-banner-container {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 50vh;
-  margin-top: 2rem;
+    .card>.card-content {
+      width: auto;
+      padding: 2rem 0 2rem 2rem;
+      display: flex;
+      width: 60%;
+      flex-direction: column;
+      justify-content: space-around;
+    }
 
-}
+    .card-content>h2 {
+      font-weight: bold;
+      font-size: 48px;
+      margin: 1rem 0;
+    }
 
-.banner {
-  border: 1px solid #333;
-  box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
-  border-radius: 1rem;
-  width: 90%;
-  min-height: 80vh;
-  margin: 0 auto;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 0.5s ease;
-}
+    .card-content>p {
+      font-size: 20px;
+    }
 
-.banner.active {
-  opacity: 1;
-  transform: translate(-50%, -50%);
-}
+    .card-content>button {
+      margin: 1rem auto;
+      border-radius: 0px;
+      border: 2px solid #333;
+    }
 
-.banner.front {
-  opacity: 1;
-  z-index: 2;
-}
+    .card>.card-img {
+      display: flex;
+      width: 40%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
 
-.banner.back {
-  opacity: 1;
-  z-index: 1;
-  transform: translate(-60%, -50%) scale(0.9);
-}
+    .card-simple>img {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      top: -13%;
+      left: 2%;
+    }
 
-.banner-exit {
-  opacity: 0;
-  transform: translate(100%, -50%); /* Desplazar completamente a la derecha */
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
+    .card>.card-img>img {
+      width: 40%;
+      height: 75%;
+      border-radius: 100px;
+      padding: 1rem 0;
+      object-fit: cover;
+    }
 
-.banner-logo,
-.banner > button {
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-}
+    /* Banner */
+    .nuestro-impacto {
+      width: 90%;
+      margin: 5rem auto;
+      font-weight: bold;
+    }
 
-.banner-logo {
-  width: 5rem;
-  height: auto;
-  top: 2rem;
-  left: 5rem;
-}
+    .carousel-banner-container {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 50vh;
+      margin-top: 2rem;
 
-.banner-logo > img {
-  object-fit: cover;
-  width: 100%;
-}
+    }
 
-.banner > button {
-  border: none;
-  border-radius: 100%;
-  z-index: 100;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-image: url("images/Flecha.svg");
-  right: 1rem;
-  bottom: 1rem;
-}
+    .banner {
+      border: 1px solid #333;
+      box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+      border-radius: 1rem;
+      width: 90%;
+      height: 70vh;
+      margin: 0 auto;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out, transform 0.5s ease;
+    }
 
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  justify-content: center;
-  align-items: center;
-}
+    .banner.active {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
 
-.titleContainer > h1 {
-  margin: 0;
-  font-size: 5rem;
-  font-weight: 500;
-  color: #000000;
-}
+    .banner.front {
+      opacity: 1;
+      z-index: 2;
+    }
 
-.titleContainer > p {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 400;
-  width: 50%;
-}
+    .banner.back {
+      opacity: 1;
+      z-index: 1;
+      transform: translate(-60%, -50%) scale(0.9);
+    }
 
-.banner-img-container {
-  display: flex;
-  width: 50%;
-  align-items: flex-end;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+    .banner-exit {
+      opacity: 0;
+      transform: translate(100%, -50%);
+      /* Desplazar completamente a la derecha */
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    }
 
-.banner-img {
-  width: 30%;
-  margin: 2rem 0;
-  border-radius: 1rem;
-  display: flex;
-  justify-content: center;
-  margin: 2rem .5rem;
-  height: 75%;
-}
+    .banner-logo,
+    .banner>button {
+      position: absolute;
+      background-position: center;
+      background-size: cover;
+    }
 
-.banner-img-container .banner-img:nth-child(2) {
-  height: 90%;
-  margin: 3rem 0;
-}
+    .banner-logo {
+      width: 5rem;
+      height: auto;
+      top: 2rem;
+      left: 5rem;
+    }
+
+    .banner-logo>img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .banner>button {
+      border: none;
+      border-radius: 100%;
+      z-index: 100;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-image: url("images/Flecha.svg");
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .titleContainer>h1 {
+      margin: 0;
+      font-size: 5rem;
+      font-weight: 500;
+      color: #000000;
+    }
+
+    .titleContainer>p {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+      width: 50%;
+    }
+
+    .banner-img-container {
+      display: flex;
+      width: 50%;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .banner-img {
+      width: 30%;
+
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      margin: 2rem 1rem;
+      height: 75%;
+    }
+
+    .banner-img-container .banner-img:nth-child(2) {
+      height: 90%;
+      margin: 3rem 0;
+    }
+
     /* Marcas */
     .marcas-component {
       height: 100vh;
@@ -454,7 +465,7 @@ h4{
     </div>
     <div>
       <div class="card-simple">
-        <img src="./images/estrellas.svg"/>
+        <img src="./images/estrellas.svg" />
         <div class="card simple">
           <div class="card-content-simple">
             <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
@@ -475,13 +486,12 @@ h4{
       <div class="carousel-banner-container">
         <banner-component></banner-component>
       </div>
-      
+
     </div>
 
     <marcas-component></marcas-component>
     <div class="prev-form">
-      <img src="" alt="Img">
-      <img src="" alt="Img">
+
     </div>
     <formulario-component></formulario-component>
     <footer-component></footer-component>
