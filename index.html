@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -15,6 +16,10 @@
 
     .fondo {
       background-image: url('./images/fondo.png');
+    }
+
+    .w3-animate-top {
+      background-image: url('./images/fondoArticle.png');
     }
 
     .container {
@@ -69,7 +74,37 @@
     }
 
     /* Cards */
+    .card-stack {
+      position: relative;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-simple {
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 300px;
+      display: flex;
+      margin: 60px 0px 60px 0px;
+
+
+    }
+
+    .simple {
+      box-shadow: none !important;
+      margin: 0rem !important;
+      background-color: #FFC70080;
+      height: 300px !important;
+      border: none !important;
+
+    }
+
     .card {
+      position: absolute;
+      transition: all 0.5s ease;
       display: flex;
       justify-content: space-between;
       flex-direction: row;
@@ -82,6 +117,17 @@
       align-items: center;
     }
 
+    .card>.card-content-simple {
+      font-size: 32px;
+      text-align: center;
+      margin: 0px 10% 0px 10%;
+    }
+
+    h4 {
+      font-size: 32px;
+      font-weight: 400;
+    }
+
     .card>.card-content {
       width: auto;
       padding: 2rem 0 2rem 2rem;
@@ -89,7 +135,6 @@
       width: 60%;
       flex-direction: column;
       justify-content: space-around;
-
     }
 
     .card-content>h2 {
@@ -99,7 +144,6 @@
     }
 
     .card-content>p {
-
       font-size: 20px;
     }
 
@@ -117,8 +161,15 @@
       align-items: center;
     }
 
-    .card>.card-img>img {
+    .card-simple>img {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      top: -13%;
+      left: 2%;
+    }
 
+    .card>.card-img>img {
       width: 40%;
       height: 75%;
       border-radius: 100px;
@@ -133,39 +184,83 @@
       font-weight: bold;
     }
 
+    .carousel-banner-container {
+      position: relative;
+      display: flex;
+      
+      width: 90%;
+      height: 50vh;
+      margin: 2rem auto;
+
+    }
+
     .banner {
       border: 1px solid #333;
       box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
       border-radius: 1rem;
-      width: 90%;
+      width: 100%;
+      height: 70vh;
       margin: 0 auto;
-      position: relative;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
-      background: #A4C8BA;
       justify-content: center;
+      opacity: 0;
+      transition: opacity .1s ease-in-out, transform 0.2s ease;
+    }
+
+    .banner.active {
+      opacity: 1;
+      transform: translate(-45%, -50%);
+    }
+
+    .banner.front {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .banner.back {
+      opacity: 1;
+      z-index: 1;
+      transform: translate(-60%, -50%) scale(0.9);
+    }
+
+    .banner-exit {
+      opacity: 0;
+      transform: translate(100%, -50%);
+      /* Desplazar completamente a la derecha */
+      transition: transform 0.2s linear, opacity 0.2s linear;
+
     }
 
     .banner-logo,
     .banner>button {
       position: absolute;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
     }
 
     .banner-logo {
-      width: 60px;
-      height: 60px;
-      background-image: url("images/AntartidaLogo.svg");
-      top: 1rem;
-      left: 3rem;
+      width: 5rem;
+      height: auto;
+      top: 2rem;
+      left: 5rem;
+    }
+
+    .banner-logo>img {
+      object-fit: cover;
+      width: 100%;
     }
 
     .banner>button {
       border: none;
       border-radius: 100%;
+      z-index: 100;
       width: 2.5rem;
       height: 2.5rem;
-      background-image: url(./images/Flecha.svg);
+      background-image: url("images/Flecha.svg");
       right: 1rem;
       bottom: 1rem;
     }
@@ -180,34 +275,39 @@
 
     .titleContainer>h1 {
       margin: 0;
-      font-size: 4rem;
-      font-weight: bold;
+      font-size: 5rem;
+      font-weight: 500;
+      color: #000000;
     }
 
     .titleContainer>p {
       margin: 0;
-      font-size: 12px;
+      font-size: 20px;
+      font-weight: 400;
+      width: 50%;
     }
 
     .banner-img-container {
       display: flex;
       width: 50%;
       align-items: flex-end;
-      gap: 0 10px;
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .banner-img {
       width: 30%;
-      height: 332px;
-      margin: 1rem 0;
+
       border-radius: 1rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url("images/Antartida.svg");
+      display: flex;
+      justify-content: center;
+      margin: 2rem 1rem;
+      height: 75%;
     }
 
     .banner-img-container .banner-img:nth-child(2) {
-      height: 370px;
+      height: 90%;
+      margin: 3rem 0;
     }
 
     /* Marcas */
@@ -363,27 +463,37 @@
       <div style="margin-left: 5%; padding-bottom: 4%;">
         <ui-button style="margin-right: 30px;" :key="'yellow'" button-type="yellow">Contactános</ui-button>
         <ui-button :key="'transparent'" button-type="transparent">Ver más</ui-button>
-
       </div>
     </div>
     <div>
+      <div class="card-simple">
+        <img src="./images/estrellas.svg" />
+        <div class="card simple">
+          <div class="card-content-simple">
+            <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
+              el distintivo toque de Bairon Media Content.</h4>
+          </div>
+        </div>
+      </div>
 
 
 
-      <card-component></card-component>
+      <card-component class="w3-animate-top"></card-component>
 
     </div>
     <div class="container">
       <h2 class="nuestro-impacto">
         Nuestro Impacto
       </h2>
-      <banner-component title="+150%" content="Aumento de conversiones en 6 meses"></banner-component>
+      <div class="carousel-banner-container">
+        <banner-component></banner-component>
+      </div>
+
     </div>
 
     <marcas-component></marcas-component>
     <div class="prev-form">
-      <img src="" alt="Img">
-      <img src="" alt="Img">
+
     </div>
     <formulario-component></formulario-component>
     <footer-component></footer-component>
