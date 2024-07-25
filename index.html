@@ -14,14 +14,28 @@
       cursor: url('./images/cursor.png'), auto
     }
 
+    .contenedor {
+      width: 90%;
+      margin: 0 auto;
+    }
+
     .fondo {
       background-image: url('./images/fondo.png');
     }
 
     .w3-animate-top {
-      background-image: url('./images/fondoArticle.png');
+      
+      position: relative;
     }
+    .w3-animate-top-background{
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      background-image: url(./images/fondoArticle.png);
+      top:0%;
+      left:-5%;
 
+    }
     .container {
       max-width: 100% !important;
       padding-top: 30px;
@@ -42,7 +56,7 @@
       box-shadow: -5px 7px 13px 4px rgba(0, 0, 0, 1);
     }
 
-    h1 {
+    .fondo>div>h1 {
       font-size: 84px;
       color: white;
       font-weight: 700;
@@ -183,13 +197,14 @@
       margin: 5rem auto;
       font-weight: bold;
     }
-
+    
     .carousel-banner-container {
       position: relative;
       display: flex;
-      width: 100%;
+
+      width: 90%;
       height: 50vh;
-      margin-top: 2rem;
+      margin: 2rem auto;
 
     }
 
@@ -197,8 +212,8 @@
       border: 1px solid #333;
       box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
       border-radius: 1rem;
-      width: 90%;
-      height: 70vh;
+      width: 100%;
+      height: 60vh;
       margin: 0 auto;
       position: absolute;
       top: 60%;
@@ -207,12 +222,12 @@
       display: flex;
       justify-content: center;
       opacity: 0;
-      transition: opacity 1s ease-in-out, transform 0.5s ease;
+      transition: opacity .1s ease-in-out, transform 0.2s ease;
     }
 
     .banner.active {
       opacity: 1;
-      transform: translate(-50%, -50%);
+      transform: translate(-45%, -50%);
     }
 
     .banner.front {
@@ -230,7 +245,8 @@
       opacity: 0;
       transform: translate(100%, -50%);
       /* Desplazar completamente a la derecha */
-      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      transition: transform 0.2s linear, opacity 0.2s linear;
+
     }
 
     .banner-logo,
@@ -289,7 +305,7 @@
       display: flex;
       width: 50%;
       align-items: flex-end;
-      gap: 1rem;
+      
       margin-top: 1rem;
     }
 
@@ -299,7 +315,7 @@
       border-radius: 1rem;
       display: flex;
       justify-content: center;
-      margin: 2rem 1rem;
+      margin: 2rem .5rem;
       height: 75%;
     }
 
@@ -314,13 +330,20 @@
       margin: 2rem;
       font-family: Arial, Helvetica, sans-serif;
     }
-
+    .marcas-component>p{
+   
+      width: calc(100% - 25px);
+      
+    }
+    .marcas-component>h1{
+      margin-top: 10rem;
+    }
     .marcas-container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(3, auto);
       gap: 5px;
-      width: 80%;
+      width: calc(100% - 25px);
       margin: 3rem auto;
     }
 
@@ -359,7 +382,12 @@
       grid-template-rows: repeat(3, auto);
       gap: 20px;
     }
-
+    .grid-container>h2{
+      font-weight:  700;
+      font-size: 3rem;
+      
+    }
+   
     .full-span {
       grid-column: span 2;
     }
@@ -374,9 +402,16 @@
       padding: 20px;
       box-sizing: border-box;
     }
-
+    input::placeholder,
+    textarea::placeholder{
+      font-weight: lighter;
+      font-size: 1.2rem;
+      color: #000;
+      margin: auto 0s;
+    }
     textarea {
-      height: 100px;
+      height: 150px;
+      resize: none;
     }
 
     .form>button {
@@ -402,6 +437,7 @@
       display: flex;
       justify-content: space-between;
       width: 90%;
+      margin: 0 auto;
       align-items: center;
     }
 
@@ -449,6 +485,7 @@
 
 <body>
   <div id="app">
+
     <div class="fondo">
       <header-component></header-component>
       <div>
@@ -463,40 +500,44 @@
         <ui-button :key="'transparent'" button-type="transparent">Ver más</ui-button>
       </div>
     </div>
-    <div>
-      <div class="card-simple">
-        <img src="./images/estrellas.svg" />
-        <div class="card simple">
-          <div class="card-content-simple">
-            <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
-              el distintivo toque de Bairon Media Content.</h4>
+    <div class="contenedor">
+      <div>
+        <div class="card-simple">
+          <img src="./images/estrellas.svg" />
+          <div class="card simple">
+            <div class="card-content-simple">
+              <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
+                el distintivo toque de Bairon Media Content.</h4>
+            </div>
           </div>
         </div>
+
+
+        <div class="w3-animate-top">
+          <div class="w3-animate-top-background"></div>
+          <card-component ></card-component>
+        </div>
+       
+
+      </div>
+      <div class="container">
+        <h2 class="nuestro-impacto">
+          Nuestro Impacto
+        </h2>
+        <div class="carousel-banner-container">
+          <banner-component></banner-component>
+        </div>
+
       </div>
 
-
-
-      <card-component class="w3-animate-top"></card-component>
-
+      <marcas-component></marcas-component>
+    
+      <formulario-component></formulario-component>
+      
+  
     </div>
-    <div class="container">
-      <h2 class="nuestro-impacto">
-        Nuestro Impacto
-      </h2>
-      <div class="carousel-banner-container">
-        <banner-component></banner-component>
-      </div>
-
-    </div>
-
-    <marcas-component></marcas-component>
-    <div class="prev-form">
-
-    </div>
-    <formulario-component></formulario-component>
     <footer-component></footer-component>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="components/header-component.js"></script>
   <script src="components/footer-component.js"></script>
