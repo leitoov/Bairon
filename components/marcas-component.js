@@ -2,7 +2,7 @@ Vue.component('marcas-component', {
   template: `
     <div class="marcas-component">
       <h1 class="text-center font-weight-bold">ACOMPAÑAMOS</h1>
-    <p class="text-center mx-auto my-5" style="width: 80%; font-size: 14px;  margin: 0 auto;
+    <p class="text-center mx-auto my-5" style=" font-size: 14px;  margin: 0 auto;
      padding: 3rem 0;">
       Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
     </p>

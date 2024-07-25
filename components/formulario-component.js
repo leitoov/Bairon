@@ -11,7 +11,7 @@ Vue.component('formulario-component', {
     template: `
       <div class="form">
         <div class="grid-container">
-          <h1>Escribinos</h1>
+          <h2>Escribinos</h2>
           <div></div>
           <div>
             <input type="text" v-model="nombre" placeholder="Nombre">
