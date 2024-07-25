@@ -68,11 +68,7 @@ Vue.component('banner-component', {
       setTimeout(() => {
         this.currentItem = (this.currentItem + 1) % this.banners.length;
         this.exitingItem = null;
-<<<<<<< HEAD
-      });
-=======
       }); 
->>>>>>> 6e98c7d5797ae13c918effbcbc1316a765849406
     }
   }
 });
