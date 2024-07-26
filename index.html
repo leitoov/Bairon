@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+  
   <style>
     body {
       font-family: "Lato", sans-serif;
@@ -24,18 +24,20 @@
     }
 
     .w3-animate-top {
-      
+
       position: relative;
     }
-    .w3-animate-top-background{
+
+    .w3-animate-top-background {
       position: absolute;
       width: 100vw;
       height: 100%;
       background-image: url(./images/fondoArticle.png);
-      top:0%;
-      left:-5%;
+      top: 0%;
+      left: -5%;
 
     }
+
     .container {
       max-width: 100% !important;
       padding-top: 30px;
@@ -91,7 +93,7 @@
     .card-stack {
       position: relative;
       height: 600px;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
     }
@@ -201,11 +203,12 @@
       margin: 5rem auto;
       font-weight: bold;
     }
-    
+
     .carousel-banner-container {
       position: relative;
       display: flex;
-
+      /*quitar*/
+      
       width: 90%;
       height: 50vh;
       margin: 2rem auto;
@@ -223,7 +226,7 @@
       top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
+      display: none;
       justify-content: center;
       opacity: 0;
       transition: opacity .1s ease-in-out, transform 0.2s ease;
@@ -310,7 +313,7 @@
       display: flex;
       width: 50%;
       align-items: flex-end;
-      
+
       margin-top: 1rem;
     }
 
@@ -335,14 +338,18 @@
       margin: 2rem;
       font-family: Arial, Helvetica, sans-serif;
     }
-    .marcas-component>p{
-   
+
+    .marcas-component>p {
+      text-align: justify;
       width: 80%;
-      
+
     }
-    .marcas-component>h1{
-      margin-top: 10rem;
+
+    .marcas-component>h1 {
+      margin-top: 3rem;
+      font-size: 2rem;
     }
+
     .marcas-container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -364,33 +371,235 @@
       height: auto;
       object-fit: cover;
     }
-    .prev-form{
+
+    .prev-form {
       width: 100%;
-      position:relative;
-      height: 80vh;
+      position: relative;
+      height: 40vh;
+      margin: 2rem 0;
     }
-    .prev-form>h1{
+
+    .prev-form>h1 {
       color: white;
       position: absolute;
       left: 0%;
       top: 50%;
-      transform: translate(0%,-50%);
+      transform: translate(0%, -50%);
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      font-size: rem;
+    }
+
+    .prev-form>img {
+      position: absolute;
+      top: 0;
+      left: -10%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    
+    /* Footer */
+    footer {
+      background: #A4C8BA;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100vw;
+    }
+
+    footer>div {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    footer>div>ul>li {
+      list-style-type: none;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    footer>div>ul {
+      margin: auto 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon {
+      gap: 20px;
+      display: flex;
+    }
+
+    .icon>img {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+    }
+
+    div>p {
+      font-size: 12px;
+      font-weight: 600;
+      text-align: left;
+      margin: 10px 10px;
+    }
+
+
+    /* Formulario */
+    .form {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+    
+      gap: 20px;
+    }
+
+    .grid-container>h2 {
+      font-weight: 700;
+      font-size: 3rem;
+
+    }
+
+    .full-span {
+      grid-column: span 2;
+    }
+
+    input,
+    textarea {
+      background: #C7AFE9;
+      border: none;
+      margin: 5px;
+      box-shadow: -1px 0px 0px 3px rgba(0, 0, 0, 1);
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      font-weight: lighter;
+      font-size: 1.2rem;
+      color: #000;
+      margin: auto 0s;
+    }
+
+    textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    .form>button {
+      margin: 20px auto;
+      padding: 15px 40px;
+      background-color: #FFD015;
+      color: #333;
+      font-weight: 600;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+    /*Mobile*/
+    @media screen and (min-width: 1024px) {
+      .card-stack{
+        display: flex;
+      }
+    /* Marcas */
+    .marcas-component {
+      height: 100vh;
+      margin: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .marcas-component>p {
+
+      width: 80%;
+
+    }
+
+    .marcas-component>h1 {
+      margin-top: 10rem;
+      font-size: 5rem;
+    }
+
+    .marcas-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 5px;
+      width: 80%;
+      margin: 3rem auto;
+    }
+
+    .marcas-container .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0px;
+    }
+
+    .marcas-container img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+    }
+
+
+      
+    .prev-form {
+      width: 100%;
+      position: relative;
+      height: 80vh;
+    }
+
+    .prev-form>h1 {
+      color: white;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      transform: translate(0%, -50%);
 
       z-index: 2;
       text-align: center;
       width: 100%;
       font-size: 5.5rem;
     }
+
     .prev-form>img {
-      position:absolute;
-      top:0;
-      left:-10%;
+      position: absolute;
+      top: 0;
+      left: -10%;
       height: auto;
       object-fit: cover;
     }
 
-    /* Formulario */
-    .form {
+    
+.banner{
+  display:flex;
+}
+/* Formulario */
+.form {
       display: flex;
       height: 100%;
       justify-content: center;
@@ -406,12 +615,13 @@
       grid-template-rows: repeat(3, auto);
       gap: 20px;
     }
-    .grid-container>h2{
-      font-weight:  700;
+
+    .grid-container>h2 {
+      font-weight: 700;
       font-size: 3rem;
-      
+
     }
-   
+
     .full-span {
       grid-column: span 2;
     }
@@ -426,13 +636,15 @@
       padding: 20px;
       box-sizing: border-box;
     }
+
     input::placeholder,
-    textarea::placeholder{
+    textarea::placeholder {
       font-weight: lighter;
       font-size: 1.2rem;
       color: #000;
       margin: auto 0s;
     }
+
     textarea {
       height: 150px;
       resize: none;
@@ -447,7 +659,6 @@
       border: 1px solid #333;
       cursor: pointer;
     }
-
     /* Footer */
     footer {
       background: #A4C8BA;
@@ -496,14 +707,6 @@
       margin: 10px 10px;
     }
 
-    @media screen and (max-height: 450px) {
-      .sidenav {
-        padding-top: 15px;
-      }
-
-      .sidenav a {
-        font-size: 18px;
-      }
     }
   </style>
 </head>
@@ -540,9 +743,9 @@
 
         <div class="w3-animate-top">
           <div class="w3-animate-top-background"></div>
-          <card-component ></card-component>
+          <card-component></card-component>
         </div>
-       
+
 
       </div>
       <div class="container">
@@ -560,10 +763,10 @@
         <img src="./images/fondo-prev-form.svg">
         <h1>CONSEGUÍ TU BOARDING PASS</h1>
       </div>
-  
+
       <formulario-component></formulario-component>
-      
-  
+
+
     </div>
     <footer-component></footer-component>
   </div>
