@@ -152,13 +152,17 @@
     }
 
     .card-content>h2 {
-      font-weight: bold;
+      font-weight: 500;
       font-size: 48px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      line-height: 78px;
       margin: 1rem 0;
     }
 
     .card-content>p {
-      font-size: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
     }
 
     .card-content>button {
@@ -295,10 +299,11 @@
     }
 
     .titleContainer>p {
-      margin: 0;
+      margin: 0 0 0 1rem;
       font-size: 20px;
       font-weight: 400;
-      width: 50%;
+      line-height: 24px;
+      width: 60%;
     }
 
     .banner-img-container {
@@ -332,7 +337,7 @@
     }
     .marcas-component>p{
    
-      width: calc(100% - 25px);
+      width: 80%;
       
     }
     .marcas-component>h1{
@@ -343,7 +348,7 @@
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(3, auto);
       gap: 5px;
-      width: calc(100% - 25px);
+      width: 80%;
       margin: 3rem auto;
     }
 
@@ -359,24 +364,43 @@
       height: auto;
       object-fit: cover;
     }
+    .prev-form{
+      width: 100%;
+      position:relative;
+      height: 80vh;
+    }
+    .prev-form>h1{
+      color: white;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      transform: translate(0%,-50%);
 
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+      font-size: 5.5rem;
+    }
     .prev-form>img {
-      max-width: 100%;
+      position:absolute;
+      top:0;
+      left:-10%;
       height: auto;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     /* Formulario */
     .form {
       display: flex;
-      height: 90vh;
+      height: 100%;
       justify-content: center;
       flex-direction: column;
+      margin-bottom: 2rem;
     }
 
     .grid-container {
       display: grid;
-      width: 50%;
+      width: 90%;
       margin: 0 auto;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, auto);
@@ -431,6 +455,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      width: 100vw;
     }
 
     footer>div {
@@ -531,7 +556,11 @@
       </div>
 
       <marcas-component></marcas-component>
-    
+      <div class="prev-form">
+        <img src="./images/fondo-prev-form.svg">
+        <h1>CONSEGUÍ TU BOARDING PASS</h1>
+      </div>
+  
       <formulario-component></formulario-component>
       
   
