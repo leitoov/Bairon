@@ -71,4 +71,4 @@ Vue.component('ui-button', {
   `;
   
   // Agregar los estilos al documento
-  document.head.insertAdjacentHTML('beforeend', styles);
+ // document.head.insertAdjacentHTML('beforeend', styles);
