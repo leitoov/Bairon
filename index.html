@@ -32,9 +32,8 @@
       position: absolute;
       width: 100vw;
       height: 100%;
-      background-image: url(./images/fondoArticle.png);
-      top: 0%;
-      left: -5%;
+      top:0%;
+      left:-5%;
 
     }
 
@@ -51,7 +50,7 @@
       background-color: #EAEAFD;
       overflow-x: hidden;
       transition: 0.1s;
-      padding-top: 60px;
+      padding-top: 40px;
       border-radius: 20px;
       margin-top: 30px;
       text-align: justify;
@@ -59,18 +58,19 @@
     }
 
     .fondo>div>h1 {
-      font-size: 84px;
+      font-size: 60px;
       color: white;
       font-weight: 700;
-      margin-top: 5%;
+      margin-top: 4%;
+      margin-bottom: 4%;
       margin-left: 5%;
     }
 
     .sidenav a {
-      padding: 8px 8px 8px 32px;
+      padding: 5px 0px 6px 7px;
       text-decoration: none;
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 500;
       color: #000000;
       display: block;
       transition: 0.3s;
@@ -92,11 +92,46 @@
     /* Cards */
     .card-stack {
       position: relative;
-      height: 600px;
-      display: none;
+      height: 350px;
+      display: flex;
       justify-content: center;
       align-items: center;
     }
+     /* Estilos generales para los botones */
+  .ui-button {
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20.7px;
+    letter-spacing: 2%;
+    text-align: center;
+    width: 180px;
+    height: 62px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+
+  .ui-button.transparent {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .ui-button.yellow {
+    background-color: rgba(255, 208, 21, 1);
+    border: 0.3px solid rgba(255, 208, 21, 1);
+    border-bottom-width: 2.74px;
+    border-right-width: 2.74px;
+    color: black;
+  }
+
+  .ui-button:hover {
+    opacity: 0.8;
+  }
 
     .card-simple {
       justify-content: center;
@@ -125,8 +160,8 @@
       justify-content: space-between;
       flex-direction: row;
       margin: 5rem auto;
-      border: 1px solid #333;
-      box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+      /*border: 1px solid #333;*/
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 1);
       border-radius: 1rem;
       width: 90%;
       height: auto;
@@ -197,6 +232,7 @@
       object-fit: cover;
     }
 
+
     /* Banner */
     .nuestro-impacto {
       width: 90%;
@@ -216,8 +252,8 @@
     }
 
     .banner {
-      border: 1px solid #333;
-      box-shadow: -3px 1px 0px 2px rgba(0, 0, 0, 1);
+      /*border: 1px solid #333;*/
+      box-shadow: -3px 1px 9px -4px #000;
       border-radius: 1rem;
       width: 100%;
       height: 60vh;
@@ -240,6 +276,20 @@
     .banner.front {
       opacity: 1;
       z-index: 2;
+    }
+   .img-footer{
+    background-image: url(./images/footer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top:1%;
     }
 
     .banner.back {
@@ -333,237 +383,6 @@
     }
 
     /* Marcas */
-    .marcas-component {
-      height: 100vh;
-      margin: 2rem;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .marcas-component>p {
-      text-align: justify;
-      width: 80%;
-
-    }
-
-    .marcas-component>h1 {
-      margin-top: 3rem;
-      font-size: 2rem;
-    }
-
-    .marcas-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, auto);
-      gap: 5px;
-      width: 80%;
-      margin: 3rem auto;
-    }
-
-    .marcas-container .grid-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px 0px;
-    }
-
-    .marcas-container img {
-      width: 80%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .prev-form {
-      width: 100%;
-      position: relative;
-      height: 40vh;
-      margin: 2rem 0;
-    }
-
-    .prev-form>h1 {
-      color: white;
-      position: absolute;
-      left: 0%;
-      top: 50%;
-      transform: translate(0%, -50%);
-      z-index: 2;
-      text-align: center;
-      width: 100%;
-      font-size: rem;
-    }
-
-    .prev-form>img {
-      position: absolute;
-      top: 0;
-      left: -10%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    
-    /* Footer */
-    footer {
-      background: #A4C8BA;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      width: 100vw;
-    }
-
-    footer>div {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      width: 90%;
-      margin: 0 auto;
-      align-items: center;
-    }
-
-    footer>div>ul>li {
-      list-style-type: none;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    footer>div>ul {
-      margin: auto 0;
-      display: flex;
-      gap: 10px;
-    }
-
-    .icon {
-      gap: 20px;
-      display: flex;
-    }
-
-    .icon>img {
-      width: 40px;
-      height: 40px;
-      vertical-align: middle;
-    }
-
-    div>p {
-      font-size: 12px;
-      font-weight: 600;
-      text-align: left;
-      margin: 10px 10px;
-    }
-
-
-    /* Formulario */
-    .form {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 2rem;
-    }
-
-    .grid-container {
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-      margin: 0 auto;
-    
-      gap: 20px;
-    }
-
-    .grid-container>h2 {
-      font-weight: 700;
-      font-size: 3rem;
-
-    }
-
-    .full-span {
-      grid-column: span 2;
-    }
-
-    input,
-    textarea {
-      background: #C7AFE9;
-      border: none;
-      margin: 5px;
-      box-shadow: -1px 0px 0px 3px rgba(0, 0, 0, 1);
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      font-weight: lighter;
-      font-size: 1.2rem;
-      color: #000;
-      margin: auto 0s;
-    }
-
-    textarea {
-      height: 150px;
-      resize: none;
-    }
-
-    .form>button {
-      margin: 20px auto;
-      padding: 15px 40px;
-      background-color: #FFD015;
-      color: #333;
-      font-weight: 600;
-      border: 1px solid #333;
-      cursor: pointer;
-    }
-    @media screen and (max-height: 450px) {
-      .sidenav {
-        padding-top: 15px;
-      }
-
-      .sidenav a {
-        font-size: 18px;
-      }
-    }
-    /*Mobile*/
-    @media screen and (min-width: 1024px) {
-      .card-stack{
-        display: flex;
-      }
-    /* Marcas */
-    .marcas-component {
-      height: 100vh;
-      margin: 2rem;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .marcas-component>p {
-
-      width: 80%;
-
-    }
-
-    .marcas-component>h1 {
-      margin-top: 10rem;
-      font-size: 5rem;
-    }
-
-    .marcas-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(3, auto);
-      gap: 5px;
-      width: 80%;
-      margin: 3rem auto;
-    }
-
-    .marcas-container .grid-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px 0px;
-    }
-
-    .marcas-container img {
-      width: 80%;
-      height: auto;
-      object-fit: cover;
-    }
 
 
       
@@ -707,7 +526,17 @@
       margin: 10px 10px;
     }
 
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
     }
+
+    
   </style>
 </head>
 
@@ -724,8 +553,8 @@
         </h1>
       </div>
       <div style="margin-left: 5%; padding-bottom: 4%;">
-        <ui-button style="margin-right: 30px;" :key="'yellow'" button-type="yellow">Contactános</ui-button>
-        <ui-button :key="'transparent'" button-type="transparent">Ver más</ui-button>
+        <button class="ui-button yellow">Contactános</button>
+        <button class="ui-button transparent">Ver más</button>
       </div>
     </div>
     <div class="contenedor">
@@ -755,18 +584,23 @@
         <div class="carousel-banner-container">
           <banner-component></banner-component>
         </div>
-
+        <div>
+          <h1 class="text-center">ACOMPAÑAMOS</h1>
+          <p class="text-center mx-auto my-5" style="font-size: 20px; margin: 0 auto; padding: 3rem 0;">
+            Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a <br>su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
+          </p>
+        </div>
       </div>
-
+    </div>
+    <div>
       <marcas-component></marcas-component>
-      <div class="prev-form">
-        <img src="./images/fondo-prev-form.svg">
-        <h1>CONSEGUÍ TU BOARDING PASS</h1>
+      <div class="img-footer">
+        CONSEGUÍ TU BOARDING PASS
       </div>
-
+    </div>
+    
+    <div class="contenedor">
       <formulario-component></formulario-component>
-
-
     </div>
     <footer-component></footer-component>
   </div>

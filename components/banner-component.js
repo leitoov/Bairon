@@ -14,19 +14,7 @@ Vue.component('banner-component', {
         imageUrl: "cardImg4.svg",
         logoImg: "AntartidaLogo.svg"
       },
-      {
-        title: "+150%",
-        content: "Aumento de conversiones en 6 meses",
-        color: "#A4C8BA",
-        imageUrl: "Antartida.svg",
-        logoImg: "AntartidaLogo.svg"
-      }, {
-        title: "otrbanner",
-        content: "Aumehgygyuiuhbu",
-        color: "red",
-        imageUrl: "cardImg4.svg",
-        logoImg: "AntartidaLogo.svg"
-      }
+      
      ],
       currentItem: 0,
       exitingItem: null // Para rastrear el banner que está saliendo
