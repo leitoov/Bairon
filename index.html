@@ -28,6 +28,11 @@
       
       position: relative;
     }
+    @media screen and (max-width: 800px) {
+      .w3-animate-top{
+        display: none;
+      }
+    }
     .w3-animate-top-background{
       position: absolute;
       width: 100vw;
@@ -491,7 +496,17 @@
       text-align: left;
       margin: 10px 10px;
     }
-
+    .marcas>h1{
+      font-size: 5rem;
+    }
+    @media screen and (max-width: 800px){
+      .marcas>h1{
+        font-size: 2rem;
+      }
+      .img-footer{
+        font-size: 3rem;
+      }
+    }
     @media screen and (max-height: 450px) {
       .sidenav {
         padding-top: 15px;
@@ -550,8 +565,8 @@
         <div class="carousel-banner-container">
           <banner-component></banner-component>
         </div>
-        <div>
-          <h1 class="text-center"  style="margin-top: 10rem; font-size: 5rem;font-weight: 700;">ACOMPAÑAMOS</h1>
+        <div class="marcas">
+          <h1 class="text-center"  style="margin-top: 10rem; font-weight: 700;">ACOMPAÑAMOS</h1>
           <p class="text-center mx-auto my-5" style="font-size: 20px; margin: 0 auto; padding: 3rem 0;width: 85%;">
             Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a <br>su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
           </p> 
