@@ -6,7 +6,7 @@ Vue.component('header-component', {
         <a href="#">QUINES SOMOS</a>
         <a href="#">SERVICIOS</a>
         <a href="#">CASOS DE ÉXITO</a>
-        <a href="#">CONTACTO</a>
+        <a href="#" style="margin-bottom: 10px;">CONTACTO</a>
       </div>
       <div class="row">
         <div class="col" style="align-items: end; display: flex; margin: auto;">
@@ -19,18 +19,19 @@ Vue.component('header-component', {
       </div>
     </div>
   `,
+  mounted() {
+    this.closeNav(); // Asegura que el menú esté cerrado al iniciar
+  },
   methods: {
     openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.getElementById("mySidenav").style.height = "auto";
       document.getElementById("mySidenav").style.boxShadow="-5px 7px 13px 4px rgba(0, 0, 0, 1)";
-
     },
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("mySidenav").style.height = "0";
       document.getElementById("mySidenav").style.boxShadow="none";
     }
-    
   }
 });
