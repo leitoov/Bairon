@@ -21,6 +21,7 @@
 
     .fondo {
       background-image: url('./images/fondo.png');
+      height: 100vh;
     }
 
     .w3-animate-top {
@@ -276,7 +277,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 50vh;
-    font-size: 50px;
+    font-size: 5rem;
     color: white;
     text-align: center;
     display: grid;
@@ -441,38 +442,42 @@
     }
 
     /* Footer */
-    footer {
+    .footer {
       background: #A4C8BA;
       min-height: 150px;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-between;
     }
 
-    footer>div {
+    .footer>div {
       display: flex;
+     
       justify-content: space-between;
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       align-items: center;
     }
 
-    footer>div>ul>li {
+    .footer>div>ul>li {
       list-style-type: none;
       font-weight: bold;
       margin: 10px 0;
+      font-size: 20px;
     }
 
-    footer>div>ul {
+    .footer>div>ul {
       margin: auto 0;
       display: flex;
-      gap: 10px;
+      gap: 2rem;
     }
 
     .icon {
       gap: 20px;
       display: flex;
+      margin-right: 1rem;
     }
+
 
     .icon>img {
       width: 40px;
@@ -481,7 +486,7 @@
     }
 
     div>p {
-      font-size: 12px;
+      font-size: 18px;
       font-weight: 600;
       text-align: left;
       margin: 10px 10px;
@@ -546,10 +551,10 @@
           <banner-component></banner-component>
         </div>
         <div>
-          <h1 class="text-center">ACOMPAÑAMOS</h1>
-          <p class="text-center mx-auto my-5" style="font-size: 20px; margin: 0 auto; padding: 3rem 0;">
+          <h1 class="text-center"  style="margin-top: 10rem; font-size: 5rem;font-weight: 700;">ACOMPAÑAMOS</h1>
+          <p class="text-center mx-auto my-5" style="font-size: 20px; margin: 0 auto; padding: 3rem 0;width: 85%;">
             Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a <br>su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
-          </p>
+          </p> 
         </div>
       </div>
     </div>
