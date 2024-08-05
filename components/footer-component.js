@@ -1,6 +1,6 @@
 Vue.component('footer-component', {
     template: `
-      <footer>
+      <div class="footer">
         <div>
           <ul>
             <li>QUIENES SOMOS</li>
@@ -18,7 +18,7 @@ Vue.component('footer-component', {
         <div>
           <p id="CR">Copyright 2024 - Media Bairon Content</p>
         </div>
-      </footer>
+      </div>
     `
   });
   
