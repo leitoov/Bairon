@@ -10,7 +10,7 @@ Vue.component('banner-component', {
       }, {
         title: "otrbanner",
         content: "Aumehgygyuiuhbu",
-        color: "red",
+        color: "#F98A00",
         imageUrl: "cardImg4.svg",
         logoImg: "AntartidaLogo.svg"
       },
@@ -43,7 +43,9 @@ Vue.component('banner-component', {
             <img :src="getImageUrl(banner.imageUrl)" :alt="banner.title">
           </div>
         </div>
-        <button @click="nextBanner"></button>
+        
+        <button @click="nextBanner">
+        <i class="material-icons arrow_forward icon">arrow_forward</i></button>
       </div>
     </div>
   `,
