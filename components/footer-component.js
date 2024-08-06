@@ -16,7 +16,7 @@ Vue.component('footer-component', {
           </div>
         </div>
         <div>
-          <p id="CR">Copyright 2024 - Media Bairon Content</p>
+          
         </div>
       </div>
     `

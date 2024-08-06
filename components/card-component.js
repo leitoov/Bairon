@@ -46,11 +46,11 @@ Vue.component("card-component", {
     <div class="card-stack">
       <div v-for="(card, index) in cards" :key="card.title" 
            class="card" 
-           :style="cardStyle(index)">
-        <div class="card-content" :style="{ backgroundColor: card.color }">
-          <h2>{{ card.title }}</h2>
-          <p>{{ card.content }}</p>
-          <ui-button class="beige">{{ card.buttonText }}</ui-button>
+           :style="cardStyle(index, card.color)">
+        <div class="card-content">
+          <h3 class="contenido-title">{{ card.title }}</h3>
+          <p class="contenido-text">{{ card.content }}</p>
+          <button class="ui-button beige">{{ card.buttonText }}</button>
         </div>
         <div class="card-img">
           <img :src="getImageUrl(card.imageUrl)" :alt="card.title">
@@ -78,7 +78,7 @@ Vue.component("card-component", {
       }, 2000);
     },
 
-    cardStyle(index) {
+    cardStyle(index, color) {
       const offset = (index - this.currentIndex + this.cards.length) % this.cards.length;
       const zIndex = this.cards.length - offset;
       const scale = 1 - (offset * 0.05);
@@ -88,6 +88,7 @@ Vue.component("card-component", {
         zIndex: zIndex,
         transform: `translateY(${translateY}px) scale(${scale})`,
         opacity: 1 - (offset * 0.2),
+        backgroundColor: color,
       };
     },
   },
