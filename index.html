@@ -24,14 +24,13 @@ rel="stylesheet">
       width: 90%;
       margin: 0 auto;
     }
-
     .fondo {
-      background-image: url('./images/fondo.png');
+      position: relative;
       height: 100vh;
+      overflow: hidden;
     }
 
     .w3-animate-top {
-
       position: relative;
       margin-bottom: 20vh;
     }
@@ -53,7 +52,12 @@ rel="stylesheet">
 
     .container {
       max-width: 100% !important;
-      padding-top: 30px;
+      padding: 10px;
+      background: #00529b52;
+    }
+    .container-two{
+      max-width: 100% !important;
+      padding: 10px;
     }
 
     .sidenav {
@@ -70,6 +74,21 @@ rel="stylesheet">
       text-align: justify;
       box-shadow: -5px 7px 13px 4px rgba(0, 0, 0, 1);
     }
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover; 
+      z-index: -1;
+    }
+
+    .header {
+      position: relative;
+      z-index: 1; /* Asegura que el contenido esté encima del video */
+      color: white; /* Ajusta el color del texto para que contraste con el video */
+    }
     .header>h1{
       font-family: "DM Sans", sans-serif!important;
       font-weight: 700;
@@ -82,6 +101,7 @@ rel="stylesheet">
       margin-top: 4%;
       margin-bottom: 4%;
       margin-left: 5%;
+      font-family: "DM Sans", sans-serif!important;
     }
 
     .sidenav a {
@@ -125,7 +145,7 @@ rel="stylesheet">
     text-align: center;
     width: 180px;
     height: 62px;
-    border-radius: 8px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-block;
@@ -140,8 +160,8 @@ rel="stylesheet">
   }
 
   .ui-button.yellow {
-    background-color: rgba(255, 208, 21, 1);
-    border: 0.3px solid rgba(255, 208, 21, 1);
+    background-color: #FFE380;
+    border: 0.3px solid #FFE380;
     border-bottom-width: 2.74px;
     border-right-width: 2.74px;
     color: black;
@@ -178,7 +198,7 @@ rel="stylesheet">
       flex-direction: row;
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 1);
       border-radius: 0.75rem;
-      width: 100%;
+      width: 85%;
       height: auto;
       align-items: center;
     }
@@ -192,9 +212,10 @@ rel="stylesheet">
     }
 
     h4 {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 400;
       font-family: "DM Sans", sans-serif;
+      line-height: 56px;
     }
     .contenido-title{
       font-size: 48px!important;
@@ -621,6 +642,10 @@ rel="stylesheet">
     <div id="overlay" class="overlay"></div>
 
     <div class="fondo">
+      <video autoplay muted loop id="background-video">
+        <source src="./images/header2.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
       <header-component></header-component>
       <div class="header">
         <h1>
@@ -630,19 +655,13 @@ rel="stylesheet">
         </h1>
       </div>
       <div style="margin-left: 5%; padding-bottom: 4%;">
-        <button class="ui-button yellow">Contactános</button>
-        <button class="ui-button transparent" style="margin-left: 30px;" onclick="LinkContenido()">Ver más</button>
-        <script>
-          function LinkContenido(){
-            window.location.href = 'contenido.html';
-          }
-        </script>
+        <button class="ui-button yellow">Contactanos</button>
+        <button class="ui-button transparent" style="margin-left: 30px;">Explorá</button>
       </div>
     </div>
     <div class="contenedor">
       <div>
-        <div class="card-simple" id="quienes-somos">
-          <img src="./images/estrellas.svg" />
+        <div class="card-simple w3-animate-top" id="quienes-somos">
           <div class="card simple">
             <div class="card-content-simple">
               <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
@@ -660,7 +679,7 @@ rel="stylesheet">
 
 
       </div>
-      <div class="container">
+      <div class="container-two">
         <h2 class="nuestros-servicios" id="caso-exito">
           Nuestro Impacto
         </h2>
