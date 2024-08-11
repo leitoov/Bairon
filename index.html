@@ -58,7 +58,7 @@ rel="stylesheet">
 
     .w3-animate-top {
       position: relative;
-      margin-bottom: 20vh;
+      margin-bottom: 15vh;
     }
 
     @media screen and (max-width: 800px) {
@@ -203,7 +203,7 @@ rel="stylesheet">
       position: relative;
       height: 300px;
       display: flex;
-      margin: 20vh 0px 20vh 0px;
+      margin: 15vh 0px 15vh 0px;
 
     }
 
@@ -337,11 +337,10 @@ rel="stylesheet">
     .carousel-banner-container {
       position: relative;
       display: flex;
-      /*quitar*/
-      
       width: 90%;
       height: 50vh;
       margin: 2rem auto;
+      margin-top: 0px;
 
     }
 
@@ -371,20 +370,33 @@ rel="stylesheet">
       opacity: 1;
       z-index: 2;
     }
-   .img-footer{
-    background-image: url(./images/footer.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 50vh;
-    font-size: 5rem;
-    color: white;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top:1%;
-    }
+    .img-footer {
+  position: relative;
+  height: 50vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.footer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté encima del video */
+  font-size: 5rem;
+}
 
     .banner.back {
       opacity: 1;
@@ -629,7 +641,8 @@ rel="stylesheet">
       font-family: "Open Sans", sans-serif;
       font-size: 60px;
       font-weight: 700;
-      margin-bottom: 10vh;
+      margin-bottom: 15vh;
+      margin-left: 12vh;
 
     }
     @media screen and (max-width: 800px){
@@ -669,7 +682,7 @@ rel="stylesheet">
 
     <div class="fondo">
       <video autoplay muted loop id="background-video">
-        <source src="./images/header2.mp4" type="video/mp4">
+        <source src="./images/header.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
       </video>
       <header-component></header-component>
@@ -721,18 +734,20 @@ rel="stylesheet">
         </div>
 
         <div class="marcas">
-          <h2 class="nuestros-servicios text-center" style="margin-top:25vh;">A quienes acompañamos</h1>
-
-          <p class="text-center mx-auto my-5 text-marcas" style="font-size: 20px; margin: 0 auto; width: 85%;">
-            Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a <br>su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
-          </p> 
+          <h2 class="nuestros-servicios" style="margin-top:25vh;">A quienes acompañamos</h1>
         </div>
       </div>
     </div>
     <div>
-      <marcas-component style="margin: 10vh 0px 10vh 0px;"></marcas-component>
+      <marcas-component style="margin: 0vh 0vh 15vh 0vh;"></marcas-component>
       <div class="img-footer">
-        CONSEGUÍ TU BOARDING PASS
+        <video autoplay muted loop class="footer-video">
+          <source src="./images/header.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="footer-content">
+          CONSEGUÍ TU BOARDING PASS
+        </div>
       </div>
     </div>
     
