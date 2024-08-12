@@ -9,58 +9,194 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
    
     <link rel="stylesheet" type="text/css" href="./stylesContenido.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
     <title>Contenido</title>
+    <style>
+        /* Footer */
+        .footer {
+            background: #A4C8BA;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer>div {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .footer>div>ul>li {
+            list-style-type: none;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 20px;
+        }
+         /* WebKit scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    /* Firefox scrollbars */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
+
+
+        .footer>div>ul {
+            margin: auto 0;
+            display: flex;
+            gap: 2rem;
+            margin-top:2%;
+        }
+
+        .icon {
+            gap: 20px;
+            display: flex;
+            margin-right: 1rem;
+        }
+
+        .sidenav a {
+            padding: 6px 0px 17px 10px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 500;
+            color: #000000;
+            display: block;
+            transition: 0.30s;
+            font-family: Helvetica;
+        }
+
+        .sidenav a:hover {
+            color: #000000;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .icon>img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .sidenav {
+            position: fixed;
+            z-index: 2000; /* Mayor z-index para asegurarse de que esté por encima del header */
+            top: 0; /* Ajusta según el espacio necesario */
+            right: 42px;
+            background-color: #EAEAFD;
+            overflow: hidden;
+            transition: 0.30s;
+            padding-top: 40px;
+            border-radius: 20px;
+            margin-top: 30px;
+            text-align: justify;
+            box-shadow: -5px 7px 13px 4px rgba(0, 0, 0, 1);
+        }
+
+        .container-full {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+
+        .container-full > .container {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .container-full > .container > .row {
+            background: #00529b52;
+            margin: 0;
+            position: fixed; /* Fija el elemento */
+            top: 0; /* Ajusta según el espacio necesario */
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Asegúrate de que esté por debajo del sidenav */
+            padding: 15px 0; /* Ajusta el padding si es necesario */
+        }
+
+        .container-full > .container > .row img {
+            width: 100%; /* Asegura que las imágenes dentro de la fila no se salgan del contenedor */
+        }
+    </style>
 </head>
 
 <body>
-
-    <div class="container">
-     
-        <div class="row">
-            <div class="col" style="display: flex; flex-direction: column;">
-                <p>Generación de contenido</p>
-                <p style="width:90%;font-weight: 700; font-size: 60px; line-height: 72px;">Inspiración en acción, 
-                    creatividad en 
-                    movimiento</p>
+    <div id="app-two">
+        <div class="container-full">
+            <header-component></header-component>
+        </div>
+        <div class="container" style="padding-top: 80px;"> <!-- Ajusta el padding-top para dar espacio a la fila fija -->
+            <div class="row">
+                <div class="col" style="display: flex; flex-direction: column;">
+                    <p>Generación de contenido</p>
+                    <p style="width:90%;font-weight: 700; font-size: 60px; line-height: 72px;">Inspiración en acción, 
+                        creatividad en 
+                        movimiento</p>
+                </div>
+                <div class="col" style="display:flex;justify-content: flex-end; ">
+                    <img src="./images/Ellipse 7.svg" >
+                </div>
             </div>
-            <div class="col" style="display:flex;justify-content: flex-end; ">
-                <img src="./images/Ellipse 7.svg" >
+            <div class="row">
+                <div class="grid-container">
+                    <div class="grid-item item-1"><img src="images/img1ContainerGrid.svg"></div>
+                    <div class="grid-item item-2"><img src="images/img3ContainerGrid.svg"></div>
+                    <div class="grid-item item-3"><img src="images/img2ContainerGrid.svg"></div>
+                    <div class="grid-item item-4"><img src="images/img4ContainerGrid.svg"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>Historias visuales</h1>
+                    <p>Transformamos las ideas en contenido visual inspirador. </p>
+                </div>
+                <div class="col">
+                    <img src="./images/img5ContainerGrid.svg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid-container">
+                    <div class="grid-item item-5"><img src="images/img1ContainerGridSegunda.svg"></div>
+                    <div class="grid-item item-6"><img src="images/img3ContainerGridSegunda.svg"></div>
+                    <div class="grid-item item-7"><img src="images/img4ContainerGridSegunda.svg"></div>
+                    <div class="grid-item item-8"><img src="images/img2ContainerGridSegunda.svg"></div>
+                    <div class="grid-item item-9"><img src="images/img5ContainerGridSegunda.svg"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="grid-container">
-                <div class="grid-item item-1"><img src="images/img1ContainerGrid.svg"></div>
-                <div class="grid-item item-2"><img src="images/img3ContainerGrid.svg"></div>
-                <div class="grid-item item-3"><img src="images/img2ContainerGrid.svg"></div>
-                <div class="grid-item item-4"><img src="images/img4ContainerGrid.svg"></div>
-              </div>
-              
-
-        </div>
-        <div class="row">
-            <div class="col">
-                <h1>Historias visuales</h1>
-                <p>Transformamos las ideas en contenido visual inspirador. </p>
-            </div>
-            <div class="col">
-                <img src="./images/img5ContainerGrid.svg">
-            </div>
-        </div>
-        <div class="row">
-            <div class="grid-container">
-                <div class="grid-item item-5"><img src="images/img1ContainerGridSegunda.svg"></div>
-                <div class="grid-item item-6"><img src="images/img3ContainerGridSegunda.svg"></div>
-                <div class="grid-item item-7"><img src="images/img4ContainerGridSegunda.svg"></div>
-                <div class="grid-item item-8"><img src="images/img2ContainerGridSegunda.svg"></div>
-                <div class="grid-item item-9"><img src="images/img5ContainerGridSegunda.svg"></div>
-   
-              </div>
-        </div>
+        <footer-component></footer-component>
     </div>
-
+    <script src="components/header-component.js"></script>
+    <script src="components/footer-component.js"></script>
     <script>
         new Vue({
-            el: '#app'
+            el: '#app-two'
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

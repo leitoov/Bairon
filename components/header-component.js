@@ -8,7 +8,14 @@ Vue.component('header-component', {
         <a href="#caso-exito"  @click="closeNav">CASOS DE ÉXITO</a>
         <a href="#contacto"  @click="closeNav" style="margin-bottom: 10px;">CONTACTO</a>
       </div>
-      <div class="row">
+      <div class="row" style="background: #00529b52;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 0;">
         <div class="col" style="align-items: end; display: flex; margin: auto;">
           <img src="./images/Logo.svg" style="width:10%;">
         </div>

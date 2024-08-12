@@ -9,10 +9,12 @@ Vue.component('footer-component', {
             <li>CONTACTO</li>
           </ul>
           <div class="icon">
-            <img src="./images/twitter.svg" alt="Twitter">
-            <img src="./images/facebook.svg" alt="Facebook">
-            <img src="./images/youtube.svg" alt="YouTube">
-            <img src="./images/linkedin.svg" alt="LinkedIn">
+            <img src="./images/Instagram.svg" alt="Twitter">
+            <img src="./images/Linkedin.svg" alt="Facebook">
+            <img src="./images/Tiktok.svg" alt="YouTube">
+            <img src="./images/mail.svg" alt="LinkedIn">
+            <img src="./images/Youtube.svg" alt="LinkedIn">
+
           </div>
         </div>
         <div>

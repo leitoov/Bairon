@@ -75,11 +75,10 @@ rel="stylesheet">
       left:-5%;
 
     }
-
     .container {
       max-width: 100% !important;
       padding: 10px;
-      background: #00529b52;
+     /* background: #00529b52;*/
     }
     .container-two{
       max-width: 100% !important;
@@ -87,12 +86,12 @@ rel="stylesheet">
     }
 
     .sidenav {
-      position: absolute;
-      z-index: 30;
+      position: fixed;
+      z-index: 2000;
       top: 0;
       right: 30px;
       background-color: #EAEAFD;
-      overflow-x: hidden;
+      overflow: hidden;
       transition: 0.30s;
       padding-top: 40px;
       border-radius: 20px;
@@ -530,7 +529,6 @@ rel="stylesheet">
       flex-direction: column;
       margin-bottom: 2rem;
     }
-
     .grid-container {
       display: grid;
       width: 90%;
@@ -577,7 +575,7 @@ rel="stylesheet">
     .form>button {
       margin: 20px auto;
       padding: 15px 40px;
-      background-color: #FFD015;
+      background-color: #FFE380;
       color: #333;
       font-weight: 600;
       border: 1px solid #333;
@@ -613,6 +611,7 @@ rel="stylesheet">
       margin: auto 0;
       display: flex;
       gap: 2rem;
+      margin-top:2%;
     }
 
     .icon {
@@ -672,12 +671,99 @@ rel="stylesheet">
       display: none; /* Oculto por defecto */
       z-index: 17;
     }
-    
+/* Estilos para el modal */
+.modal-content {
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.modal-header {
+  color:white;
+  background-color: #E26AE5;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente, si es necesario */
+  position: relative; /* Necesario para posicionar el botón de cierre */
+}
+
+.modal-title {
+  margin: 0; /* Elimina el margen por defecto del título */
+  font-size: 1.5rem; /* Ajusta el tamaño del título según tus necesidades */
+  text-align: center; /* Asegura que el texto del título esté centrado */
+}
+
+.btn-close {
+  filter: invert(100%);
+  color:white;
+  margin-top: 4%!important;
+  position: absolute; /* Posiciona el botón de cierre absolutamente */
+  right: 15px; /* Ajusta la posición del botón de cierre desde el borde derecho */
+  transform: translateY(-50%); /* Ajusta la posición vertical del botón de cierre */
+}
+
+.modal-body {
+  padding: 2rem;
+}
+.modal-input{
+  height: 48px;
+  width: 430px;
+  font-size: 20px;
+  box-shadow: -2px 3px 3px -2px rgba(0.0 .0 .1);
+
+}
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+.modal-description{
+  color:#000;
+  font-family: Helvetica;
+  font-size: 20px;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-bottom.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   </style>
 </head>
 
 <body>
   <div id="app">
+    <!-- Modal -->
+<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">NEWSLETTER</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="subscriptionForm">
+          <p class="modal-description">
+            Mantenete al dia de nuestras novedades
+          </p>
+          <div class="mb-3">
+            <input type="email" class="form-control modal-input" id="email" required placeholder="Email">
+          </div>
+          <button type="submit" class="ui-button yellow" style="margin: auto;
+          display: block;
+          margin-top: 6%;
+          width: 140px;
+          height: 50px;">Contactanos</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div id="overlay" class="overlay"></div>
 
     <div class="fondo">
@@ -705,9 +791,9 @@ rel="stylesheet">
         </div>
       </div>
     </div>
-    <div class="contenedor">
+    <div class="contenedor fade-in-bottom">
       <div>
-        <div class="card-simple w3-animate-top" id="quienes-somos">
+        <div class="card-simple w3-animate-top fade-in-bottom" id="quienes-somos">
           <div class="card simple">
             <div class="card-content-simple">
               <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
@@ -718,29 +804,29 @@ rel="stylesheet">
 
 
         <div class="w3-animate-top">
-          <h2 class="nuestros-servicios">Nuestros servicios</h2>
-          <div class="w3-animate-top-background"></div>
-          <card-component id="servicios"></card-component>
+          <h2 class="nuestros-servicios fade-in-bottom">Nuestros servicios</h2>
+          <div class="w3-animate-top-background fade-in-bottom"></div>
+          <card-component id="servicios fade-in-bottom"></card-component>
         </div>
 
 
       </div>
       <div class="container-two">
-        <h2 class="nuestros-servicios" id="caso-exito">
+        <h2 class="nuestros-servicios fade-in-bottom" id="caso-exito">
           Nuestro Impacto
         </h2>
-        <div class="carousel-banner-container">
-          <banner-component></banner-component>
+        <div class="carousel-banner-container fade-in-bottom">
+          <banner-component class="fade-in-bottom"></banner-component>
         </div>
 
-        <div class="marcas">
+        <div class="marcas fade-in-bottom">
           <h2 class="nuestros-servicios" style="margin-top:25vh;">A quienes acompañamos</h1>
         </div>
       </div>
     </div>
     <div>
       <marcas-component style="margin: 0vh 0vh 15vh 0vh;"></marcas-component>
-      <div class="img-footer">
+      <div class="img-footer fade-in-bottom">
         <video autoplay muted loop class="footer-video">
           <source src="./images/header.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
@@ -751,7 +837,7 @@ rel="stylesheet">
       </div>
     </div>
     
-    <div class="contenedor" style="margin-top: 10vh;margin-bottom: 10vh;">
+    <div class="contenedor fade-in-bottom" style="margin-top: 10vh;margin-bottom: 10vh;">
       <formulario-component id="contacto"></formulario-component>
     </div>
     <footer-component></footer-component>
@@ -764,6 +850,24 @@ rel="stylesheet">
   <script src="components/card-component.js"></script>
   <script src="components/banner-component.js"></script>
   <script src="components/UI/ui-button.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myModal = new bootstrap.Modal(document.getElementById('subscriptionModal'), {
+        keyboard: false
+      });
+      myModal.show();
+    });
+  
+    document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      if (email) {
+        alert('Gracias por suscribirte con el correo: ' + email);
+        bootstrap.Modal.getInstance(document.getElementById('subscriptionModal')).hide();
+        // Aquí puedes agregar lógica para enviar el correo electrónico al servidor.
+      }
+    });
+  </script>
 
   <script>
     new Vue({
@@ -773,6 +877,28 @@ rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeElements = document.querySelectorAll('.fade-in-bottom');
+
+      function checkFade() {
+        fadeElements.forEach(function(element) {
+          var position = element.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+
+          if (position < windowHeight * 0.9) {
+            element.classList.add('is-visible');
+          }
+        });
+      }
+
+      // Ejecuta la función al cargar la página
+      checkFade();
+
+      // Ejecuta la función al hacer scroll
+      window.addEventListener('scroll', checkFade);
+    });
+  </script>
 </body>
 
 </html>
