@@ -15,25 +15,50 @@ rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <style>
+    /* WebKit scrollbars */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    /* Firefox scrollbars */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
     body {
       font-family: "Lato", sans-serif;
       cursor: url('./images/cursor.png'), auto
     }
-
-    .contenedor {
-      width: 90%;
-      margin: 0 auto;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
     }
 
+    .contenedor {
+      width: 100%;
+      margin: 0 auto;
+    }
     .fondo {
-      background-image: url('./images/fondo.png');
+      position: relative;
       height: 100vh;
+      overflow: hidden;
     }
 
     .w3-animate-top {
-
       position: relative;
-      margin-bottom: 20vh;
+      margin-bottom: 15vh;
     }
 
     @media screen and (max-width: 800px) {
@@ -50,25 +75,44 @@ rel="stylesheet">
       left:-5%;
 
     }
-
     .container {
       max-width: 100% !important;
-      padding-top: 30px;
+      padding: 10px;
+     /* background: #00529b52;*/
+    }
+    .container-two{
+      max-width: 100% !important;
+      padding: 10px;
     }
 
     .sidenav {
-      position: absolute;
-      z-index: 30;
+      position: fixed;
+      z-index: 2000;
       top: 0;
       right: 30px;
       background-color: #EAEAFD;
-      overflow-x: hidden;
-      transition: 0.1s;
+      overflow: hidden;
+      transition: 0.30s;
       padding-top: 40px;
       border-radius: 20px;
       margin-top: 30px;
       text-align: justify;
       box-shadow: -5px 7px 13px 4px rgba(0, 0, 0, 1);
+    }
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover; 
+      z-index: -1;
+    }
+
+    .header {
+      position: relative;
+      z-index: 1; /* Asegura que el contenido esté encima del video */
+      color: white; /* Ajusta el color del texto para que contraste con el video */
     }
     .header>h1{
       font-family: "DM Sans", sans-serif!important;
@@ -79,9 +123,10 @@ rel="stylesheet">
       font-size: 70px;
       color: white;
       font-weight: 700;
-      margin-top: 4%;
-      margin-bottom: 4%;
+      margin-top: 2%;
+      margin-bottom: 3%;
       margin-left: 5%;
+      font-family: "DM Sans", sans-serif!important;
     }
 
     .sidenav a {
@@ -91,7 +136,7 @@ rel="stylesheet">
       font-weight: 500;
       color: #000000;
       display: block;
-      transition: 0.3s;
+      transition: 0.30s;
       font-family: Helvetica;
     }
 
@@ -125,7 +170,7 @@ rel="stylesheet">
     text-align: center;
     width: 180px;
     height: 62px;
-    border-radius: 8px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-block;
@@ -140,8 +185,8 @@ rel="stylesheet">
   }
 
   .ui-button.yellow {
-    background-color: rgba(255, 208, 21, 1);
-    border: 0.3px solid rgba(255, 208, 21, 1);
+    background-color: #FFE380;
+    border: 0.3px solid #FFE380;
     border-bottom-width: 2.74px;
     border-right-width: 2.74px;
     color: black;
@@ -157,7 +202,7 @@ rel="stylesheet">
       position: relative;
       height: 300px;
       display: flex;
-      margin: 20vh 0px 20vh 0px;
+      margin: 15vh 0px 15vh 0px;
 
     }
 
@@ -178,7 +223,7 @@ rel="stylesheet">
       flex-direction: row;
       box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 1);
       border-radius: 0.75rem;
-      width: 100%;
+      width: 85%;
       height: auto;
       align-items: center;
     }
@@ -192,9 +237,10 @@ rel="stylesheet">
     }
 
     h4 {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 400;
       font-family: "DM Sans", sans-serif;
+      line-height: 56px;
     }
     .contenido-title{
       font-size: 48px!important;
@@ -290,11 +336,10 @@ rel="stylesheet">
     .carousel-banner-container {
       position: relative;
       display: flex;
-      /*quitar*/
-      
       width: 90%;
       height: 50vh;
       margin: 2rem auto;
+      margin-top: 0px;
 
     }
 
@@ -324,20 +369,33 @@ rel="stylesheet">
       opacity: 1;
       z-index: 2;
     }
-   .img-footer{
-    background-image: url(./images/footer.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 50vh;
-    font-size: 5rem;
-    color: white;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top:1%;
-    }
+    .img-footer {
+  position: relative;
+  height: 50vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.footer-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Asegura que el video esté detrás del contenido */
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté encima del video */
+  font-size: 5rem;
+}
 
     .banner.back {
       opacity: 1;
@@ -471,7 +529,6 @@ rel="stylesheet">
       flex-direction: column;
       margin-bottom: 2rem;
     }
-
     .grid-container {
       display: grid;
       width: 90%;
@@ -518,7 +575,7 @@ rel="stylesheet">
     .form>button {
       margin: 20px auto;
       padding: 15px 40px;
-      background-color: #FFD015;
+      background-color: #FFE380;
       color: #333;
       font-weight: 600;
       border: 1px solid #333;
@@ -554,6 +611,7 @@ rel="stylesheet">
       margin: auto 0;
       display: flex;
       gap: 2rem;
+      margin-top:2%;
     }
 
     .icon {
@@ -582,7 +640,8 @@ rel="stylesheet">
       font-family: "Open Sans", sans-serif;
       font-size: 60px;
       font-weight: 700;
-      margin-bottom: 10vh;
+      margin-bottom: 15vh;
+      margin-left: 12vh;
 
     }
     @media screen and (max-width: 800px){
@@ -612,15 +671,106 @@ rel="stylesheet">
       display: none; /* Oculto por defecto */
       z-index: 17;
     }
-    
+/* Estilos para el modal */
+.modal-content {
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.modal-header {
+  color:white;
+  background-color: #E26AE5;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente, si es necesario */
+  position: relative; /* Necesario para posicionar el botón de cierre */
+}
+
+.modal-title {
+  margin: 0; /* Elimina el margen por defecto del título */
+  font-size: 1.5rem; /* Ajusta el tamaño del título según tus necesidades */
+  text-align: center; /* Asegura que el texto del título esté centrado */
+}
+
+.btn-close {
+  filter: invert(100%);
+  color:white;
+  margin-top: 4%!important;
+  position: absolute; /* Posiciona el botón de cierre absolutamente */
+  right: 15px; /* Ajusta la posición del botón de cierre desde el borde derecho */
+  transform: translateY(-50%); /* Ajusta la posición vertical del botón de cierre */
+}
+
+.modal-body {
+  padding: 2rem;
+}
+.modal-input{
+  height: 48px;
+  width: 430px;
+  font-size: 20px;
+  box-shadow: -2px 3px 3px -2px rgba(0.0 .0 .1);
+
+}
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+.modal-description{
+  color:#000;
+  font-family: Helvetica;
+  font-size: 20px;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-bottom.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   </style>
 </head>
 
 <body>
   <div id="app">
+    <!-- Modal -->
+<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">NEWSLETTER</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="subscriptionForm">
+          <p class="modal-description">
+            Mantenete al dia de nuestras novedades
+          </p>
+          <div class="mb-3">
+            <input type="email" class="form-control modal-input" id="email" required placeholder="Email">
+          </div>
+          <button type="submit" class="ui-button yellow" style="margin: auto;
+          display: block;
+          margin-top: 6%;
+          width: 140px;
+          height: 50px;">Contactanos</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div id="overlay" class="overlay"></div>
 
     <div class="fondo">
+      <video autoplay muted loop id="background-video">
+        <source src="./images/header.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
       <header-component></header-component>
       <div class="header">
         <h1>
@@ -630,19 +780,20 @@ rel="stylesheet">
         </h1>
       </div>
       <div style="margin-left: 5%; padding-bottom: 4%;">
-        <button class="ui-button yellow">Contactános</button>
-        <button class="ui-button transparent" style="margin-left: 30px;" onclick="LinkContenido()">Ver más</button>
-        <script>
-          function LinkContenido(){
-            window.location.href = 'contenido.html';
-          }
-        </script>
+        <button class="ui-button yellow">Contactanos</button>
+        <button class="ui-button transparent" style="margin-left: 30px;">Explorá</button>
+        <div style="margin-top:6%;">
+          <img style="width: 90px;" src="./images/corona.png">
+          <img style="width: 90px; margin-left:20px;" src="./images/freddo.png">
+          <img style="width: 90px; margin-left:20px;" src="./images/sofitel.png">
+          <img style="width: 90px; margin-left:20px;" src="./images/campari.png">
+          <img style="width: 90px; margin-left:20px;" src="./images/colonia.png">
+        </div>
       </div>
     </div>
-    <div class="contenedor">
+    <div class="contenedor fade-in-bottom">
       <div>
-        <div class="card-simple" id="quienes-somos">
-          <img src="./images/estrellas.svg" />
+        <div class="card-simple w3-animate-top fade-in-bottom" id="quienes-somos">
           <div class="card simple">
             <div class="card-content-simple">
               <h4>Impulsando marcas con servicios expertos en diseño y postproducción:
@@ -653,38 +804,40 @@ rel="stylesheet">
 
 
         <div class="w3-animate-top">
-          <h2 class="nuestros-servicios">Nuestros servicios</h2>
-          <div class="w3-animate-top-background"></div>
-          <card-component id="servicios"></card-component>
+          <h2 class="nuestros-servicios fade-in-bottom">Nuestros servicios</h2>
+          <div class="w3-animate-top-background fade-in-bottom"></div>
+          <card-component id="servicios fade-in-bottom"></card-component>
         </div>
 
 
       </div>
-      <div class="container">
-        <h2 class="nuestros-servicios" id="caso-exito">
+      <div class="container-two">
+        <h2 class="nuestros-servicios fade-in-bottom" id="caso-exito">
           Nuestro Impacto
         </h2>
-        <div class="carousel-banner-container">
-          <banner-component></banner-component>
+        <div class="carousel-banner-container fade-in-bottom">
+          <banner-component class="fade-in-bottom"></banner-component>
         </div>
 
-        <div class="marcas">
-          <h2 class="nuestros-servicios text-center" style="margin-top:25vh;">A quienes acompañamos</h1>
-
-          <p class="text-center mx-auto my-5 text-marcas" style="font-size: 20px; margin: 0 auto; width: 85%;">
-            Los proyectos exitosos son el resultado de la suma de pequeños detalles realizados con dedicación, y a <br>su vez, el factor humano y la empatía con cada uno de nuestros clientes. Estos son algunos que nos eligieron y nos siguen eligiendo:
-          </p> 
+        <div class="marcas fade-in-bottom">
+          <h2 class="nuestros-servicios" style="margin-top:25vh;">A quienes acompañamos</h1>
         </div>
       </div>
     </div>
     <div>
-      <marcas-component style="margin: 10vh 0px 10vh 0px;"></marcas-component>
-      <div class="img-footer">
-        CONSEGUÍ TU BOARDING PASS
+      <marcas-component style="margin: 0vh 0vh 15vh 0vh;"></marcas-component>
+      <div class="img-footer fade-in-bottom">
+        <video autoplay muted loop class="footer-video">
+          <source src="./images/header.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="footer-content">
+          CONSEGUÍ TU BOARDING PASS
+        </div>
       </div>
     </div>
     
-    <div class="contenedor" style="margin-top: 10vh;margin-bottom: 10vh;">
+    <div class="contenedor fade-in-bottom" style="margin-top: 10vh;margin-bottom: 10vh;">
       <formulario-component id="contacto"></formulario-component>
     </div>
     <footer-component></footer-component>
@@ -697,6 +850,24 @@ rel="stylesheet">
   <script src="components/card-component.js"></script>
   <script src="components/banner-component.js"></script>
   <script src="components/UI/ui-button.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myModal = new bootstrap.Modal(document.getElementById('subscriptionModal'), {
+        keyboard: false
+      });
+      myModal.show();
+    });
+  
+    document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      if (email) {
+        alert('Gracias por suscribirte con el correo: ' + email);
+        bootstrap.Modal.getInstance(document.getElementById('subscriptionModal')).hide();
+        // Aquí puedes agregar lógica para enviar el correo electrónico al servidor.
+      }
+    });
+  </script>
 
   <script>
     new Vue({
@@ -706,6 +877,28 @@ rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeElements = document.querySelectorAll('.fade-in-bottom');
+
+      function checkFade() {
+        fadeElements.forEach(function(element) {
+          var position = element.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+
+          if (position < windowHeight * 0.9) {
+            element.classList.add('is-visible');
+          }
+        });
+      }
+
+      // Ejecuta la función al cargar la página
+      checkFade();
+
+      // Ejecuta la función al hacer scroll
+      window.addEventListener('scroll', checkFade);
+    });
+  </script>
 </body>
 
 </html>
