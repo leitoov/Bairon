@@ -348,7 +348,7 @@ rel="stylesheet">
       box-shadow: -3px 1px 9px -4px #000;
       border-radius: 1rem;
       width: 100%;
-      height: 60vh;
+      height: 65vh;
       margin: 0 auto;
       position: absolute;
       top: 60%;
@@ -428,6 +428,7 @@ rel="stylesheet">
     .banner-logo>img {
       object-fit: cover;
       width: 100%;
+      min-width:200px;
     }
 
     .banner>button {
@@ -446,45 +447,90 @@ rel="stylesheet">
       width: 40%;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     .titleContainer>h1 {
       margin: 0;
       font-size: 5rem;
-      font-weight: 500;
-      color: #000000;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 400;
+      
+      position:absolute;
+      left:1rem;
+      top:35%;
+      text-shadow:  1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;;
     }
 
+
     .titleContainer>p {
+      position:absolute;
+      left:1rem;
+      top:60%;
       margin: 0 0 0 1rem;
       font-size: 20px;
       font-weight: 400;
       line-height: 24px;
       width: 60%;
     }
-
     .banner-img-container {
-      display: flex;
-      width: 50%;
-      align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-top: 1rem;
 
-      margin-top: 1rem;
-    }
+  position: relative;
+}
 
-    .banner-img {
-      width: 30%;
+.banner-img {
+  width: 100%;
+  border-radius: 1rem;
+  height: 75%;
+  position: relative;
+}
 
-      border-radius: 1rem;
-      display: flex;
-      justify-content: center;
-      margin: 2rem .5rem;
-      height: 75%;
-    }
+.banner-img img {
+  position: absolute;
+  top: 4%;
+}
+/*1° item*/
+.item-1 .banner-img img:nth-child(1) {
+ 
+  left: 4%;
+}
 
-    .banner-img-container .banner-img:nth-child(2) {
-      height: 90%;
-      margin: 3rem 0;
-    }
+.item-1 .banner-img img:nth-child(2) {
+  top: 3%;
+  left: 35%;
+  z-index: 10;
+}
+
+.item-1 .banner-img img:nth-child(3) {
+
+  left: 56%;
+}
+/*2° item*/
+.item-2 .banner-img img:nth-child(1){
+  top:2%;
+  left: 50%;
+}
+.item-2 .banner-img img:nth-child(2){
+  top:12%;
+}
+
+/*3° item*/
+.item-3 .banner-img img:nth-child(1){
+  top:2%;
+  left: 50%;
+}
+.item-3 .banner-img img:nth-child(2){
+  top:2%;
+  left: 20%;
+}
+
 
     /* Marcas */
 
