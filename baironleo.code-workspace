@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../php ejercicios"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "baironleo"
+	}
+}
