@@ -1,23 +1,28 @@
 Vue.component('grid-component-img-text', {
-    data() {
-      return {
-        content: {
-          title: "Generación de contenido",
-          subtitle: "Inspiración en acción, creatividad en movimiento",
-          imageUrl: "./images/Ellipse 7.svg"
-        }
-      };
-    },
-    template: `
-      <div class="row fade-in-bottom">
-        <div class="col" style="display: flex; flex-direction: column;">
-          <p>{{ content.title }}</p>
-          <p style="width:90%;font-weight: 700; font-size: 60px; line-height: 72px;">{{ content.subtitle }}</p>
-        </div>
-        <div class="col" style="display:flex;justify-content: flex-end;">
-          <img :src="content.imageUrl" alt="Illustration">
-        </div>
+  props: {
+    content: {
+      type: Object,
+      required: true,
+      default: () => ({
+        title: 'Historias visuales',
+        description: 'Transformamos las ideas en contenido visual inspirador.',
+        imageSrc: './images/img5ContainerGrid.svg'
+      })
+    }
+  },
+  template: `
+    <div class="row fade-in-bottom">
+      <div class="col" >
+        <img :src="content.imageSrc" alt="Image">
+        
       </div>
-    `
-  });
-  
+      <div class="col" style="display: flex; flex-direction: column;">
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.description }}</p>
+      </div>
+    </div>
+  `,
+  mounted() {
+    console.log('content:', this.content); // Verifica el valor de content
+  }
+});

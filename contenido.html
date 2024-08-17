@@ -169,25 +169,34 @@
 </head>
 
 <body>
+    
     <div id="app-two">
+        <script>
+            const imgArray = [
+                { src: "images/img1ContainerGrid.svg", alt: "Image 1" },
+                { src: "images/img3ContainerGrid.svg", alt: "Image 2" },
+                { src: "images/img2ContainerGrid.svg", alt: "Image 3" },
+                { src: "images/img4ContainerGrid.svg", alt: "Image 4" }
+            ];
+        </script>
         <div class="container-full">
             <header-component></header-component>
         </div>
         <div class="container" style="padding-top: 80px;">
             <!-- Ajusta el padding-top para dar espacio a la fila fija -->
-            <grid-component-img-text></grid-component-img-text>
             <grid-component></grid-component>
-            <grid-component2></grid-component2>
-            <grid-component5></grid-component5>
+            <grid-component-4 :images="imgArray" ></grid-component-4>
+            <grid-component-text-img></grid-component-text-img>
+            <grid-component-5></grid-component-5>
         </div>
         <footer-component></footer-component>
     </div>
-    <script src="components/grid-component2.js"></script>
     <script src="components/header-component.js"></script>
     <script src="components/footer-component.js"></script>
-    <script src="components/grid-component-img-text.js"></script>
-    <script src="components/grid-component5.js"></script>
     <script src="components/grid-component.js"></script>
+    <script src="components/grid-component-text-img.js"></script>
+    <script src="components/grid-component-4.js"></script>
+    <script src="components/grid-component-5.js"></script>
     <script>
         new Vue({
             el: '#app-two'
@@ -197,7 +206,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script>
+    <script>//animacion
         document.addEventListener('DOMContentLoaded', function () {
             var fadeElements = document.querySelectorAll('.fade-in-bottom');
 
