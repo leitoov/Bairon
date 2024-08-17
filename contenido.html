@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   
+
     <link rel="stylesheet" type="text/css" href="./stylesContenido.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
 
     <title>Contenido</title>
     <style>
+        .fade-in-bottom {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-bottom.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Footer */
         .footer {
             background: #A4C8BA;
@@ -36,33 +47,37 @@
             margin: 10px 0;
             font-size: 20px;
         }
-         /* WebKit scrollbars */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
-    }
 
-    /* Firefox scrollbars */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: #888 #f1f1f1;
-    }
+        /* WebKit scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        /* Firefox scrollbars */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
 
 
         .footer>div>ul {
             margin: auto 0;
             display: flex;
             gap: 2rem;
-            margin-top:2%;
+            margin-top: 2%;
         }
 
         .icon {
@@ -102,8 +117,10 @@
 
         .sidenav {
             position: fixed;
-            z-index: 2000; /* Mayor z-index para asegurarse de que esté por encima del header */
-            top: 0; /* Ajusta según el espacio necesario */
+            z-index: 2000;
+            /* Mayor z-index para asegurarse de que esté por encima del header */
+            top: 0;
+            /* Ajusta según el espacio necesario */
             right: 42px;
             background-color: #EAEAFD;
             overflow: hidden;
@@ -122,78 +139,64 @@
             max-width: 100%;
         }
 
-        .container-full > .container {
+        .container-full>.container {
             width: 100%;
             padding: 0;
             margin: 0;
             max-width: 100%;
         }
 
-        .container-full > .container > .row {
+        .container-full>.container>.row {
             background: #00529b52;
             margin: 0;
-            position: fixed; /* Fija el elemento */
-            top: 0; /* Ajusta según el espacio necesario */
+            position: fixed;
+            /* Fija el elemento */
+            top: 0;
+            /* Ajusta según el espacio necesario */
             left: 0;
             width: 100%;
-            z-index: 1000; /* Asegúrate de que esté por debajo del sidenav */
-            padding: 15px 0; /* Ajusta el padding si es necesario */
+            z-index: 1000;
+            /* Asegúrate de que esté por debajo del sidenav */
+            padding: 15px 0;
+            /* Ajusta el padding si es necesario */
         }
 
-        .container-full > .container > .row img {
-            width: 100%; /* Asegura que las imágenes dentro de la fila no se salgan del contenedor */
+        .container-full>.container>.row img {
+            width: 100%;
+            /* Asegura que las imágenes dentro de la fila no se salgan del contenedor */
         }
     </style>
 </head>
 
 <body>
+    
     <div id="app-two">
+        <script>
+            const imgArray = [
+                { src: "images/img1ContainerGrid.svg", alt: "Image 1" },
+                { src: "images/img3ContainerGrid.svg", alt: "Image 2" },
+                { src: "images/img2ContainerGrid.svg", alt: "Image 3" },
+                { src: "images/img4ContainerGrid.svg", alt: "Image 4" }
+            ];
+        </script>
         <div class="container-full">
             <header-component></header-component>
         </div>
-        <div class="container" style="padding-top: 80px;"> <!-- Ajusta el padding-top para dar espacio a la fila fija -->
-            <div class="row">
-                <div class="col" style="display: flex; flex-direction: column;">
-                    <p>Generación de contenido</p>
-                    <p style="width:90%;font-weight: 700; font-size: 60px; line-height: 72px;">Inspiración en acción, 
-                        creatividad en 
-                        movimiento</p>
-                </div>
-                <div class="col" style="display:flex;justify-content: flex-end; ">
-                    <img src="./images/Ellipse 7.svg" >
-                </div>
-            </div>
-            <div class="row">
-                <div class="grid-container">
-                    <div class="grid-item item-1"><img src="images/img1ContainerGrid.svg"></div>
-                    <div class="grid-item item-2"><img src="images/img3ContainerGrid.svg"></div>
-                    <div class="grid-item item-3"><img src="images/img2ContainerGrid.svg"></div>
-                    <div class="grid-item item-4"><img src="images/img4ContainerGrid.svg"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h1>Historias visuales</h1>
-                    <p>Transformamos las ideas en contenido visual inspirador. </p>
-                </div>
-                <div class="col">
-                    <img src="./images/img5ContainerGrid.svg">
-                </div>
-            </div>
-            <div class="row">
-                <div class="grid-container">
-                    <div class="grid-item item-5"><img src="images/img1ContainerGridSegunda.svg"></div>
-                    <div class="grid-item item-6"><img src="images/img3ContainerGridSegunda.svg"></div>
-                    <div class="grid-item item-7"><img src="images/img4ContainerGridSegunda.svg"></div>
-                    <div class="grid-item item-8"><img src="images/img2ContainerGridSegunda.svg"></div>
-                    <div class="grid-item item-9"><img src="images/img5ContainerGridSegunda.svg"></div>
-                </div>
-            </div>
+        <div class="container" style="padding-top: 80px;">
+            <!-- Ajusta el padding-top para dar espacio a la fila fija -->
+            <grid-component></grid-component>
+            <grid-component-4 :images="imgArray" ></grid-component-4>
+            <grid-component-text-img></grid-component-text-img>
+            <grid-component-5></grid-component-5>
         </div>
         <footer-component></footer-component>
     </div>
     <script src="components/header-component.js"></script>
     <script src="components/footer-component.js"></script>
+    <script src="components/grid-component.js"></script>
+    <script src="components/grid-component-text-img.js"></script>
+    <script src="components/grid-component-4.js"></script>
+    <script src="components/grid-component-5.js"></script>
     <script>
         new Vue({
             el: '#app-two'
@@ -202,6 +205,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script>//animacion
+        document.addEventListener('DOMContentLoaded', function () {
+            var fadeElements = document.querySelectorAll('.fade-in-bottom');
+
+            function checkFade() {
+                fadeElements.forEach(function (element) {
+                    var position = element.getBoundingClientRect().top;
+                    var windowHeight = window.innerHeight;
+
+                    if (position < windowHeight * 0.9) {
+                        element.classList.add('is-visible');
+                    }
+                });
+            }
+
+            // Ejecuta la función al cargar la página
+            checkFade();
+
+            // Ejecuta la función al hacer scroll
+            window.addEventListener('scroll', checkFade);
+        });
+    </script>
 </body>
 
 </html>
