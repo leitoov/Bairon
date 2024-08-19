@@ -10,7 +10,7 @@ Vue.component('formulario-component', {
     },
     template: `
       <div class="form">
-        <div class="grid-container">
+        <div class="grid-container-form">
           <h2>Escribinos</h2>
           <div></div>
           <div>

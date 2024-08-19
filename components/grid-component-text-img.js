@@ -12,9 +12,11 @@ Vue.component('grid-component-text-img', {
   },
   template: `
     <div class="row fade-in-bottom">
-      <div class="col" style="display: flex; flex-direction: column;">
-        <h1>{{ content.title }}</h1>
-        <p>{{ content.description }}</p>
+      <div class="col" style="display: flex; flex-direction: column;justify-content:center; gap: 10px ">
+        <div class="title-content">
+          <h1 >{{ content.title }}</h1>
+          <p >{{ content.description }}</p>
+        </div>
       </div>
       <div class="col">
         <img :src="content.imageSrc" alt="Image">
