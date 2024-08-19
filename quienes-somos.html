@@ -173,36 +173,41 @@
     <div id="app-two">
       
         <script>
-              const contentData = {
-            title: "Generación de contenido",
-            subtitle: "Inspiración en acción, creatividad en movimiento",
-            imageUrl: "./images/C-IMG.svg"
-        };
-            const imgArray = [
-                { src: "images/img1ContainerGrid.svg", alt: "Image 1" },
-                { src: "images/img3ContainerGrid.svg", alt: "Image 2" },
-                { src: "images/img2ContainerGrid.svg", alt: "Image 3" },
-                { src: "images/img4ContainerGrid.svg", alt: "Image 4" }
-            ];
         </script>
         <div class="container-full">
             <header-component></header-component>
         </div>
         <div class="container" style="padding-top: 80px;">
-            <!-- Ajusta el padding-top para dar espacio a la fila fija -->
-            <grid-component :content="contentData" ></grid-component>
-            <grid-component-4 :images="imgArray" ></grid-component-4>
-            <grid-component-text-img></grid-component-text-img>
-            <grid-component-5></grid-component-5>
+           
+            <div class="row fade-in-bottom" style="width: 90%;">
+                <div class="col" >
+                  <div style="display: flex; flex-direction: column;justify-content: space-around; height: 90%;">
+                    <h1 style="font-size:48px; text-align: center;"> Hola! Somos Molly <br>y Martu ! </h1>
+                    <p style="font-size: 24px; text-align: center; font-weight: 400;">Fundamos BAIRON MEDIA CONTENT
+                        hace 6 años porque nos apasiona el marketing y las redes sociales. 
+                        <br><br>
+                        Creemos que con una estrategia de comunicación completa y dinámica se puede lograr un gran impacto aumentando su alcance.</p>
+                  </div>
+                </div>
+                <div class="col" style="display:flex; justify-content: flex-end;">
+                  <img src="./images/QS-img.svg" alt="Image" style="object-fit: cover ;width: 90%; height: auto;">
+                </div>
+              </div>
+              <div class="row fade-in-bottom" style="margin-top: 6rem; width: 90%;">
+                <img src="./images/Martu y Molly 1.svg">
+              </div>
+              <div class="row fade-in-bottom" style="width: 90%;">
+                <div class="col"><img src="./images/firma1.svg" ></div>
+                <div class="col" style="justify-content: flex-end; display: flex;"><img src="./images/firma2.svg" ></div>
+              </div>
+          
         </div>
         <footer-component></footer-component>
     </div>
     <script src="components/header-component.js"></script>
     <script src="components/footer-component.js"></script>
-    <script src="components/grid-component.js"></script>
-    <script src="components/grid-component-text-img.js"></script>
-    <script src="components/grid-component-4.js"></script>
-    <script src="components/grid-component-5.js"></script>
+
+   
     <script>
         new Vue({
             el: '#app-two'

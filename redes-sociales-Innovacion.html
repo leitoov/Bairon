@@ -182,8 +182,8 @@
                 imageUrl: "./images/RS-IC-IMG.svg"
             };
             const contentD = {
-                title: "Diseño gráfico",
-                description: "Innovación y Creatividad Visual",
+                title: "Manual de Marca",
+                description: "manuales de marca que definen y comunican la identidad visual y comunicativa de tu empresa. ",
                 imageSrc: "./images/RS-IC-IMG2.svg"
             };
             const imgArray = [
@@ -203,7 +203,16 @@
             <grid-component-4 :images="imgArray"></grid-component-4>
             <grid-component-text-img :content="componentData"></grid-component-text-img>
             <grid-component-img-text :content="contentD"></grid-component-img-text>
-
+            <div style="display: flex; justify-content: center;">
+                <div style=" display:flex;flex-direction: column;gap: 3rem;">
+                    <h1 >Firmas digitales</h1>
+                    <p >Eesenciales para establecer una imagen profesional y consistente en cada<br/> comunicación. Ofrecemos diseños personalizados que reflejan la identidad de tu<br/> marca y proporcionan toda la información de contacto de manera clara y elegante.</p>
+                
+                </div>
+            </div>
+            <div style="display: flex; width: 100%; justify-content: center; margin: 3rem 0;">
+                <img src="./images/RS-IC-IMG3.svg" style="object-fit: cover; width: 80%; height: auto;" >
+            </div>
         </div>
         <footer-component></footer-component>
     </div>
