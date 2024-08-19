@@ -491,6 +491,7 @@ position: relative;
   width:  52%;
   margin: 10px;
 }
+
 .title-content-img-text>p{
   font-size: 20px;
   font-weight: 400;
@@ -674,6 +675,7 @@ textarea {
   font-weight: bold;
   margin: 10px 0;
   font-size: 20px;
+  
 }
 
 .footer>div>ul {

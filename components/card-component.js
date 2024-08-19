@@ -8,6 +8,7 @@ Vue.component("card-component", {
           color: "#F5A76B",
           buttonText: "Principal",
           imageUrl: "cardImg1.svg",
+          enlace:"./contenido.html"
         },
         {
           title: "Manejo de redes",
@@ -15,6 +16,7 @@ Vue.component("card-component", {
           color: "#C7AFE9",
           buttonText: "Principal",
           imageUrl: "cardImg2.svg",
+            enlace:"./redes-sociales.html"
         },
         {
           title: "Cobertura de eventos",
@@ -22,6 +24,7 @@ Vue.component("card-component", {
           color: "#A4C8BA",
           buttonText: "Principal",
           imageUrl: "cardImg3.svg",
+            enlace:"./cobertura-de-eventos.html"
         },
         {
           title: "Diseño gráfico",
@@ -29,6 +32,7 @@ Vue.component("card-component", {
           color: "#E9AFF2",
           buttonText: "Principal",
           imageUrl: "cardImg4.svg",
+            enlace:"./redes-sociales-innovacion.html"
         },
         {
           title: "Diseño Web",
@@ -36,6 +40,7 @@ Vue.component("card-component", {
           color: "#F5A76B",
           buttonText: "Principal",
           imageUrl: "cardImg5.svg",
+            enlace:"./redes-sociales.html"
         },
       ],
       currentIndex: 0,
@@ -50,8 +55,8 @@ Vue.component("card-component", {
         <div class="card-content">
           <h3 class="contenido-title">{{ card.title }}</h3>
           <p class="contenido-text">{{ card.content }}</p>
-          <button class="ui-button beige">{{ card.buttonText }}</button>
-        </div>
+        <button class="ui-button beige" @click="Href(card.enlace)">{{ card.buttonText }}</button>
+       </div>
         <div class="card-img">
           <img :src="getImageUrl(card.imageUrl)" :alt="card.title">
         </div>
@@ -90,6 +95,9 @@ Vue.component("card-component", {
         opacity: 1 - (offset * 0.2),
         backgroundColor: color,
       };
+    },
+    Href(enlace) {
+      window.location.href = enlace;
     },
   },
 });
