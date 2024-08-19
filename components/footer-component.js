@@ -1,12 +1,13 @@
-Vue.component('footer-component', {
-    template: `
+Vue.component("footer-component", {
+  template: `
       <div class="footer">
+    
         <div>
           <ul>
-            <li>QUIENES SOMOS</li>
-            <li>SERVICIOS</li>
-            <li>CASOS DE ÉXITO</li>
-            <li>CONTACTO</li>
+            <li><a href="#quienes-somos.html"        style="  text-decoration: none !important;  color:#212529;">QUIENES SOMOS</a></li>
+            <li><a href="#servicios"        style="  text-decoration: none !important ;  color:#212529;">SERVICIOS</a></li>
+            <li><a href="#casos-exito"        style="  text-decoration: none !important;  color:#212529;">CASOS DE ÉXITO</a></li>
+            <li><a href="#contacto"         style="  text-decoration: none !important;  color:#212529;"></a>CONTACTO</li>
           </ul>
           <div class="icon">
             <img src="./images/Instagram.svg" alt="Twitter">
@@ -21,6 +22,5 @@ Vue.component('footer-component', {
           
         </div>
       </div>
-    `
-  });
-  
+    `,
+});
