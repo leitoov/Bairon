@@ -171,7 +171,13 @@
 <body>
     
     <div id="app-two">
+      
         <script>
+              const contentData = {
+            title: "Generación de contenido",
+            subtitle: "Inspiración en acción, creatividad en movimiento",
+            imageUrl: "./images/C-IMG.svg"
+        };
             const imgArray = [
                 { src: "images/img1ContainerGrid.svg", alt: "Image 1" },
                 { src: "images/img3ContainerGrid.svg", alt: "Image 2" },
@@ -184,7 +190,7 @@
         </div>
         <div class="container" style="padding-top: 80px;">
             <!-- Ajusta el padding-top para dar espacio a la fila fija -->
-            <grid-component></grid-component>
+            <grid-component :content="contentData" ></grid-component>
             <grid-component-4 :images="imgArray" ></grid-component-4>
             <grid-component-text-img></grid-component-text-img>
             <grid-component-5></grid-component-5>
