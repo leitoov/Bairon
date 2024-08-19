@@ -3,7 +3,7 @@ Vue.component('header-component', {
     <div class="container text-center">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" @click="closeNav">&times;</a>
-        <a href="#quienes-somos"  @click="closeNav" style="margin-top: 15px;">QUIENES SOMOS</a>
+        <a href="../quienes-somos.html"  @click="closeNav" style="margin-top: 15px;">QUIENES SOMOS</a>
         <a href="#servicios"  @click="closeNav">SERVICIOS</a>
         <a href="#caso-exito"  @click="closeNav">CASOS DE ÉXITO</a>
         <a href="#contacto"  @click="closeNav" style="margin-bottom: 10px;">CONTACTO</a>
