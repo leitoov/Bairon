@@ -44,11 +44,6 @@ html, body {
   margin-bottom: 15vh;
 }
 
-@media screen and (max-width: 800px) {
-  .w3-animate-top{
-    display: none;
-  }
-}
 .w3-animate-top-background{
 
   position: absolute;
@@ -198,6 +193,7 @@ opacity: 0.8;
 
 }
 
+
 .card {
   position: absolute;
   transition: all 0.5s ease;
@@ -225,6 +221,16 @@ h4 {
   font-family: "DM Sans", sans-serif;
   line-height: 56px;
 }
+@media screen and (max-width: 800px) {
+h4{
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  line-height: 39px;
+  text-align: center;
+}  
+}
+
 .contenido-title{
   font-size: 48px!important;
   font-weight: 700;
@@ -280,7 +286,7 @@ h4 {
   text-align: center;
   border-radius: 0px;
   border: 2px solid #333;
-  background-color: #F3E39D;
+  background-color: #6e6d69;
   font-weight: 400;
 }
 
@@ -308,6 +314,38 @@ h4 {
   object-fit: cover;
 }
 
+@media screen and (max-width: 800px) {
+  .card-stack>*{
+    margin: 0%;
+  }
+  .card{
+    width: 95%;
+  }
+  .card-img{
+    display: none !important;
+  }
+  .card-content{
+    width: 100% !important;
+    margin: 0%;
+    padding:2rem !important;
+  }
+  .contenido-title{
+    margin: 0% !important;
+    font-size:28px;
+    font-weight: 700;
+  }
+  .contenido-text{
+    margin: 3rem 0 !important;
+    line-height: 19.2px;
+    font-size: 16px;
+  }
+  .card-stack{
+    height: 314px;
+  }
+  .card-content>button{
+   margin: 0% ;
+  }
+}
 
 /* Banner */
 .nuestro-impacto {
