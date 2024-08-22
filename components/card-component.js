@@ -6,40 +6,40 @@ Vue.component("card-component", {
           title: "Generación de contenido",
           content: "Nos preocupamos por entender lo que nuestros clientes quieren y realizar lo que necesitan logrando resultados personalizados.",
           color: "#F5A76B",
-          buttonText: "Principal",
-          imageUrl: "cardImg1.svg",
+          buttonText: "Ver más",
+          imageUrl: "generacion_contenido.mp4",
           enlace:"./contenido.html"
         },
         {
           title: "Manejo de redes",
           content: "Brindamos un servicio integral, nos involucramos en la planificación de estrategias, la creación y publicación de contenido textual, gráfico y audiovisual.",
           color: "#C7AFE9",
-          buttonText: "Principal",
-          imageUrl: "cardImg2.svg",
+          buttonText: "Ver más",
+          imageUrl: "manejo_redes.mp4",
             enlace:"./redes-sociales.html"
         },
         {
           title: "Cobertura de eventos",
           content: "Nos preocupamos por entender lo que nuestros clientes quieren y realizar lo que necesitan logrando resultados personalizados.",
           color: "#A4C8BA",
-          buttonText: "Principal",
-          imageUrl: "cardImg3.svg",
+          buttonText: "Ver más",
+          imageUrl: "cobertura_eventos.mp4",
             enlace:"./cobertura-de-eventos.html"
         },
         {
           title: "Diseño gráfico",
           content: "Creamos piezas visuales que impacten los sentidos de la audiencia probando de manera constante estilos y tendencias para optimizar su presencia en entornos",
           color: "#E9AFF2",
-          buttonText: "Principal",
-          imageUrl: "cardImg4.svg",
+          buttonText: "Ver más",
+          imageUrl: "disenio_grafico.mp4",
             enlace:"./redes-sociales-innovacion.html"
         },
         {
           title: "Diseño Web",
           content: "Desarrollamos sitios web eficientes con identidades visuales únicas que cautiven, prestando atención especial a la ejecución minuciosa de cada detalle.",
           color: "#F5A76B",
-          buttonText: "Principal",
-          imageUrl: "cardImg5.svg",
+          buttonText: "Ver más",
+          imageUrl: "disenio_web.mp4",
             enlace:"./redes-sociales.html"
         },
       ],
@@ -58,7 +58,10 @@ Vue.component("card-component", {
         <button class="ui-button beige" @click="Href(card.enlace)">{{ card.buttonText }}</button>
        </div>
         <div class="card-img">
-          <img :src="getImageUrl(card.imageUrl)" :alt="card.title">
+          <video autoplay muted loop id="cards-videos" style="width: 84%;">
+              <source :src="getImageUrl(card.imageUrl)" type="video/mp4">
+              Tu navegador no soporta el video en formato .mov.
+          </video>
         </div>
       </div>
     </div>
@@ -74,7 +77,7 @@ Vue.component("card-component", {
 
   methods: {
     getImageUrl(img) {
-      return "./images/" + img;
+      return "./videos/" + img;
     },
 
     startAutoChange() {
