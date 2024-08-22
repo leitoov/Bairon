@@ -648,6 +648,13 @@ display:flex;
   grid-template-rows: repeat(3, auto);
   gap: 20px;
 }
+@media screen and (max-width: 800px){
+  .grid-container-form{ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .grid-container>h2 {
   font-weight: 700;
   font-size: 3rem;
