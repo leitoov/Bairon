@@ -32,7 +32,7 @@ Vue.component("card-component", {
           color: "#E9AFF2",
           buttonText: "Ver más",
           imageUrl: "disenio_grafico.gif",
-            enlace:"./redes-sociales-innovacion.html"
+            enlace:"./redes-sociales-Innovacion.html"
         },
         {
           title: "Diseño Web",
