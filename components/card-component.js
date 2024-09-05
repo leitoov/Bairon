@@ -15,7 +15,7 @@ Vue.component("card-component", {
           content: "Brindamos un servicio integral, nos involucramos en la planificación de estrategias, la creación y publicación de contenido textual, gráfico y audiovisual.",
           color: "#C7AFE9",
           buttonText: "Ver más",
-          imageUrl: "menejo_redes.gif",
+          imageUrl: "manejo_redes_sociales.gif",
             enlace:"./redes-sociales.html"
         },
         {
@@ -48,22 +48,15 @@ Vue.component("card-component", {
   },
 
   template: `
-    <div class="card-stack">
-      <div v-for="(card, index) in cards" :key="card.title" 
-           class="card" 
-           :style="cardStyle(index, card.color)">
-        <div class="card-content">
-          <h3 class="contenido-title">{{ card.title }}</h3>
-          <p class="contenido-text">{{ card.content }}</p>
-        <button class="ui-button beige" @click="Href(card.enlace)">{{ card.buttonText }}</button>
-       </div>
-        <div class="card-img">
-<img :src="getImageUrl(card.imageUrl)" />
-
-         
-        </div>
+  <div class="animatecardcontainer">
+    <a href="#" class="animatecard education" v-for="(card, index) in cards" :key="card.title">
+      <div class="overlay"></div>
+      <div class="circle">
+        <img :src="getImageUrl(card.imageUrl)" style="width: 100%;"/>
       </div>
-    </div>
+      <p> {{ card.title }}</p>
+    </a>
+  </div>
   `,
 
   mounted() {
@@ -76,7 +69,7 @@ Vue.component("card-component", {
 
   methods: {
     getImageUrl(img) {
-      return "./gif/" + img;
+      return "./videos/" + img;
     },
 
     startAutoChange() {
