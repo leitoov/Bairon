@@ -14,10 +14,10 @@ Vue.component('formulario-component', {
           <h2>Escribinos</h2>
           <div></div>
           <div>
-            <input type="text" v-model="nombre" placeholder="Nombre">
+            <input type="text" v-model="nombre" placeholder="Nombre y Apellido">
           </div>
           <div>
-            <input type="text" v-model="apellido" placeholder="Apellido">
+            <input type="text" v-model="apellido" placeholder="Empresa">
           </div>
           <div>
             <input type="email" v-model="email" placeholder="Email">

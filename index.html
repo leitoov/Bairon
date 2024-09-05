@@ -48,11 +48,14 @@ rel="stylesheet">
   </div>
 </div>
 
+<div id="videoContainer" style="display:none; position: relative; width: 100%; z-index: 1004;">
+  <video id="videoExplora" style="width: 100%;">
+    <source src="./videos/inicio.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+  <button id="closeButton">X</button>
+</div>
 
-<video id="videoExplora" style="display:none; width: 100%;">
-  <source src="./videos/inicio.mp4" type="video/mp4">
-  Tu navegador no soporta el video.
-</video>
 
     <div id="overlay" class="overlay"></div>
 
@@ -188,42 +191,74 @@ rel="stylesheet">
       // Ejecuta la función al hacer scroll
       window.addEventListener('scroll', checkFade);
     });
-    // Lógica para abrir el video en pantalla completa al hacer clic en "Explorá"
-document.getElementById('exploraBtn').addEventListener('click', function() {
+    document.getElementById('exploraBtn').addEventListener('click', function() {
   var video = document.getElementById('videoExplora');
+  var videoContainer = document.getElementById('videoContainer');
+  var closeButton = document.getElementById('closeButton');
 
-  // Mostrar el video y solicitar pantalla completa
-  if (video.requestFullscreen) {
-    video.requestFullscreen();
-  } else if (video.mozRequestFullScreen) { // Firefox
-    video.mozRequestFullScreen();
-  } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-    video.webkitRequestFullscreen();
-  } else if (video.msRequestFullscreen) { // IE/Edge
-    video.msRequestFullscreen();
-  }
-
-  // Reproducir el video automáticamente
-  video.style.display = 'block';
+  // Mostrar el contenedor del video con la animación de crecimiento
+  videoContainer.style.display = 'block';
+  videoContainer.classList.add('grow');
   video.play();
 
-  // Evento que detecta cuando el video ha terminado
-  video.onended = function() {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) { // Firefox
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { // IE/Edge
-      document.msExitFullscreen();
-    }
+  // Solicitar pantalla completa
+  if (videoContainer.requestFullscreen) {
+    videoContainer.requestFullscreen();
+  } else if (videoContainer.mozRequestFullScreen) { // Firefox
+    videoContainer.mozRequestFullScreen();
+  } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+    videoContainer.webkitRequestFullscreen();
+  } else if (videoContainer.msRequestFullscreen) { // IE/Edge
+    videoContainer.msRequestFullscreen();
+  }
 
-    // Ocultar el video nuevamente
-    video.style.display = 'none';
+  // Detectar si el video está en pantalla completa para mostrar la "X"
+  function toggleCloseButton() {
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+      closeButton.style.display = 'block'; // Mostrar la "X" en pantalla completa
+    } else {
+      closeButton.style.display = 'none'; // Ocultar la "X" cuando no esté en pantalla completa
+    }
+  }
+
+  // Escuchar los eventos de cambio de pantalla completa
+  document.addEventListener('fullscreenchange', toggleCloseButton);
+  document.addEventListener('webkitfullscreenchange', toggleCloseButton);
+  document.addEventListener('mozfullscreenchange', toggleCloseButton);
+  document.addEventListener('msfullscreenchange', toggleCloseButton);
+
+  // Función para cerrar el video
+  function closeVideo() {
+    videoContainer.classList.add('shrink');
+    video.pause();
+    setTimeout(function() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+
+      // Ocultar el contenedor del video
+      videoContainer.style.display = 'none';
+      closeButton.style.display = 'none';
+      videoContainer.classList.remove('grow', 'shrink');
+    }, 500);
+  }
+
+  // Cerrar el video al hacer clic en la "X"
+  closeButton.addEventListener('click', function() {
+    closeVideo();
+  });
+
+  // Salir de pantalla completa al terminar el video
+  video.onended = function() {
+    closeVideo();
   };
 });
-
   </script>
 </body>
 
