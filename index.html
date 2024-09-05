@@ -206,7 +206,24 @@ document.getElementById('exploraBtn').addEventListener('click', function() {
   // Reproducir el video automáticamente
   video.style.display = 'block';
   video.play();
+
+  // Evento que detecta cuando el video ha terminado
+  video.onended = function() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+      document.msExitFullscreen();
+    }
+
+    // Ocultar el video nuevamente
+    video.style.display = 'none';
+  };
 });
+
   </script>
 </body>
 
