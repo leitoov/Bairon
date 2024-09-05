@@ -48,6 +48,12 @@ rel="stylesheet">
   </div>
 </div>
 
+
+<video id="videoExplora" style="display:none; width: 100%;">
+  <source src="./videos/inicio.mp4" type="video/mp4">
+  Tu navegador no soporta el video.
+</video>
+
     <div id="overlay" class="overlay"></div>
 
     <div class="fondo">
@@ -65,7 +71,7 @@ rel="stylesheet">
       </div>
       <div style="margin-left: 5%; padding-bottom: 4%;">
         <button class="ui-button yellow">Contactanos</button>
-        <button class="ui-button transparent" style="margin-left: 30px;">Explorá</button>
+        <button class="ui-button transparent" style="margin-left: 30px;" id="exploraBtn">Explorá</button>
         <div style="margin-top:7%;">
           <img style="width: 90px;" src="./images/corona.png">
           <img style="width: 90px; margin-left:20px;" src="./images/freddo.png">
@@ -182,6 +188,25 @@ rel="stylesheet">
       // Ejecuta la función al hacer scroll
       window.addEventListener('scroll', checkFade);
     });
+    // Lógica para abrir el video en pantalla completa al hacer clic en "Explorá"
+document.getElementById('exploraBtn').addEventListener('click', function() {
+  var video = document.getElementById('videoExplora');
+
+  // Mostrar el video y solicitar pantalla completa
+  if (video.requestFullscreen) {
+    video.requestFullscreen();
+  } else if (video.mozRequestFullScreen) { // Firefox
+    video.mozRequestFullScreen();
+  } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    video.webkitRequestFullscreen();
+  } else if (video.msRequestFullscreen) { // IE/Edge
+    video.msRequestFullscreen();
+  }
+
+  // Reproducir el video automáticamente
+  video.style.display = 'block';
+  video.play();
+});
   </script>
 </body>
 
