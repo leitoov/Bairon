@@ -1008,7 +1008,7 @@ transform: translateY(0);
 .animatecard p {
   font-size: 17px;
   color: #4C5656;
-  margin-top: 30px;
+  margin-top: 10px;
   z-index: 1000;
   transition: color 0.3s ease-out;
 }
@@ -1045,13 +1045,18 @@ transform: translateY(0);
   transform: translateZ(0);
 }
 
+.content{
+  z-index: 1;
+  padding: 0px 10px 10px 10px;
+  color: #756a6a;
+}
 .overlay {
   width: 118px;
   position: absolute; 
-  height: 118px;
+  height: 108px;
   border-radius: 50%;
   background: var(--bg-color);
-  top: 70px;
+  top: 26px;
   left: 50px;
   z-index: 0;
   transition: transform 0.3s ease-out;

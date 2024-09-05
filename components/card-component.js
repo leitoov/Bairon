@@ -48,15 +48,19 @@ Vue.component("card-component", {
   },
 
   template: `
-  <div class="animatecardcontainer">
-    <a href="#" class="animatecard education" v-for="(card, index) in cards" :key="card.title">
-      <div class="overlay"></div>
-      <div class="circle">
-        <img :src="getImageUrl(card.imageUrl)" style="width: 100%;"/>
-      </div>
-      <p> {{ card.title }}</p>
-    </a>
-  </div>
+  <template>
+    <div class="animatecardcontainer" >
+      <a :href="card.enlace" class="animatecard education" v-for="(card, index) in cards" :key="card.title">
+        <div class="overlay"></div>
+        <div class="circle">
+          <img :src="getImageUrl(card.imageUrl)" style="width: 100%;"/>
+        </div>
+        <p> {{ card.title }}</p>
+        <small class="content"> {{ card.content}} </small>
+      </a>
+    </div>
+  </template>
+
   `,
 
   mounted() {
