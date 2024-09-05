@@ -701,7 +701,7 @@ textarea {
 /* Footer */
 .footer {
   background: #A4C8BA;
-  min-height: 150px;
+  min-height: 85px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -721,7 +721,7 @@ textarea {
   list-style-type: none;
   font-weight: bold;
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 15px;
   
 }
 
@@ -740,8 +740,8 @@ textarea {
 
 
 .icon>img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   vertical-align: middle;
 
 }
