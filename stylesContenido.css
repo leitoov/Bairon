@@ -788,7 +788,6 @@ div>p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según tus necesidades */
   display: none; /* Oculto por defecto */
   z-index: 17;
 }
@@ -1103,11 +1102,11 @@ transform: translateY(0);
 }
 
 .grow {
-  animation: growVideo 0.5s forwards; /* Duración de la animación de 0.5 segundos */
+  animation: growVideo 0.20s forwards; /* Duración de la animación de 0.5 segundos */
 }
 
 .shrink {
-  animation: shrinkVideo 0.5s forwards;
+  animation: shrinkVideo 0.10s forwards;
 }
 
 @keyframes shrinkVideo {
