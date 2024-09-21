@@ -11,15 +11,13 @@ Vue.component('grid-component', {
     }
   },
   template: `
-    <div class="row fade-in-bottom">
-      <div class="col-9 slide-in-left" style="display: flex; flex-direction: column;">
+    <div class="row fade-in-bottom grid-component-container">
+      <div class="col-9 slide-in-left text-content">
         <p class="title-animation">{{ content.title }}</p>
-        <p class="subtitle-animation" style="width:90%;font-weight: 700; font-size: 60px; line-height: 72px;">{{ content.subtitle }}</p>
+        <p class="subtitle-animation">{{ content.subtitle }}</p>
       </div>
-      <div class="col slide-in-right" style="display:flex;justify-content: flex-end; margin: auto;">
-        <div>
-          <img :src="content.imageUrl" alt="Illustration" class="image-animation">
-        </div>
+      <div class="col slide-in-right image-container">
+        <img :src="content.imageUrl" alt="Illustration" class="image-animation responsive-image">
       </div>
     </div>
   `,
@@ -32,6 +30,38 @@ Vue.component('grid-component', {
         const style = document.createElement('style');
         style.id = 'grid-component-styles';
         style.textContent = `
+          .grid-component-container {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+          }
+          
+          .text-content {
+            flex: 0 0 75%;
+            padding-right: 20px;
+          }
+          
+          .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            max-height: 100%;
+          }
+          
+          .responsive-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+          }
+
+          .subtitle-animation {
+            width: 90%;
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 1.2;
+          }
+
           .slide-in-left, .slide-in-right {
             opacity: 0;
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -73,6 +103,23 @@ Vue.component('grid-component', {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0.6s;
+          }
+
+          @media (max-width: 768px) {
+            .grid-component-container {
+              flex-direction: column;
+            }
+            .text-content, .image-container {
+              flex: 1 0 100%;
+              padding-right: 0;
+            }
+            .image-container {
+              justify-content: center;
+              margin-top: 20px;
+            }
+            .subtitle-animation {
+              font-size: 40px;
+            }
           }
         `;
         document.head.appendChild(style);

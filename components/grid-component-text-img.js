@@ -18,7 +18,7 @@ Vue.component('grid-component-text-img', {
           <p class="text-center">{{ content.description }}</p>
         </div>
       </div>
-      <div class="col slide-in-right">
+      <div class="col slide-in-right" style="text-align: center;">
         <img :src="content.imageSrc" alt="Image" style="width: 80%; border-radius: 2%;">
       </div>
     </div>
