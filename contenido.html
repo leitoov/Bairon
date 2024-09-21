@@ -176,19 +176,19 @@
               const contentData = {
             title: "Generación de contenido",
             subtitle: "Inspiración en acción, creatividad en movimiento",
-            imageUrl: "./images/C-IMG.svg"
+            imageUrl: "./videos/solapa_generacion_contenido.gif"
         };
             const imgArray = [
-                { src: "images/img1ContainerGrid.svg", alt: "Image 1" },
-                { src: "images/img3ContainerGrid.svg", alt: "Image 2" },
-                { src: "images/img2ContainerGrid.svg", alt: "Image 3" },
-                { src: "images/img4ContainerGrid.svg", alt: "Image 4" }
+                { src: "images/img1ContainerGrid.jpg", alt: "Image 1" },
+                { src: "images/img3ContainerGrid.jpg", alt: "Image 2" },
+                { src: "images/img2ContainerGrid.jpg", alt: "Image 3" },
+                { src: "images/img4ContainerGrid.jpg", alt: "Image 4" }
             ];
         </script>
         <div class="container-full">
             <header-component></header-component>
         </div>
-        <div class="container" style="padding-top: 80px;">
+        <div class="container" style="padding-top: 80px; width: 90%;">
             <!-- Ajusta el padding-top para dar espacio a la fila fija -->
             <grid-component :content="contentData" ></grid-component>
             <grid-component-4 :images="imgArray" ></grid-component-4>

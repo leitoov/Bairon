@@ -517,10 +517,10 @@ position: relative;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
-  width:  50%;
- 
+  width:  100%;
   gap: 4rem;
   margin: 0 auto;
+  text-align: center;
 }
 .title-content-img-text{
   display:flex;
@@ -915,7 +915,7 @@ transform: translateY(0);
 }
 .item-6>img{
   height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
 }
 .item-7 {
@@ -1009,6 +1009,7 @@ transform: translateY(0);
   margin-top: 10px;
   z-index: 1000;
   transition: color 0.3s ease-out;
+  text-align: center;
 }
 
 .circle {
