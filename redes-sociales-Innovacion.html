@@ -174,23 +174,23 @@
             const componentData = { 
                 title: "Impacto Visual Asegurado ",
                 description: "Creamos piezas visuales que impactan y cautivan los sentidos de tu audiencia. Nuestro equipo se mantiene al tanto de las últimas tendencias y estilos para optimizar la presencia de tu marca en entornos físicos y digitales. ",
-                imageSrc: "./images/RS-IC-IMG1.svg"
+                imageSrc: "./images/RS-IC-IMG1.png"
             };
             const contentData = {
                 title: "Diseño gráfico",
                 subtitle: "Innovación y Creatividad Visual",
-                imageUrl: "./images/RS-IC-IMG.svg"
+                imageUrl: "./images/RS-IC-IMG.gif"
             };
             const contentD = {
                 title: "Manual de Marca",
-                description: "manuales de marca que definen y comunican la identidad visual y comunicativa de tu empresa. ",
-                imageSrc: "./images/RS-IC-IMG2.svg"
+                description: "Buscamos crear piezas visuales que impacten en los sentidos de la audiencia probando de manera constante estilos y tendencias para que se vean mejor. ",
+                imageSrc: "./images/RS-IC-IMG2.gif"
             };
             const imgArray = [
-                { src: "images/RS-IMG1.svg", alt: "Image 1" },
-                { src: "images/RS-IMG4.svg", alt: "Image 2" },
-                { src: "images/RS-IMG2.svg", alt: "Image 3" },
-                { src: "images/RS-IMG3.svg", alt: "Image 4" }
+                { src: "images/RS-IMGS1.png", alt: "Image 1" },
+                { src: "images/RS-IMG2.png", alt: "Image 3" },
+                { src: "images/agenda.png", alt: "Image 2" },
+                { src: "images/IMGS3.png", alt: "Image 4" }
                
             ];
         </script>
@@ -203,16 +203,8 @@
             <grid-component-4 :images="imgArray"></grid-component-4>
             <grid-component-text-img :content="componentData"></grid-component-text-img>
             <grid-component-img-text :content="contentD"></grid-component-img-text>
-            <div style="display: flex; justify-content: center;">
-                <div style=" display:flex;flex-direction: column;gap: 3rem;">
-                    <h1 >Firmas digitales</h1>
-                    <p >Eesenciales para establecer una imagen profesional y consistente en cada<br/> comunicación. Ofrecemos diseños personalizados que reflejan la identidad de tu<br/> marca y proporcionan toda la información de contacto de manera clara y elegante.</p>
-                
-                </div>
-            </div>
-            <div style="display: flex; width: 100%; justify-content: center; margin: 3rem 0;">
-                <img src="./images/RS-IC-IMG3.svg" style="object-fit: cover; width: 80%; height: auto;" >
-            </div>
+            
+           
         </div>
         <footer-component></footer-component>
     </div>

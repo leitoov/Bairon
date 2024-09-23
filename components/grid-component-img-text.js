@@ -18,8 +18,20 @@ Vue.component('grid-component-img-text', {
       </div>
       <div class="col" style="display: flex; flex-direction: column;margin:0 auto;">
         <div class="title-content-img-text">
-          <h1  >{{ content.title }}</h1>
-          <p class="text-center">{{ content.description }}</p>
+          <h1>{{ content.title }}</h1>
+          <p>{{ content.description }}</p>
+          <ul>
+          <li class="lista">Identidad corporativa</li>
+          <li class="lista">Diseño de logotipo</li>
+          <li class="lista">Comercialización</li>
+          <li class="lista">Paquetería</li>
+          <li class="lista">Piezas editoriales</li>
+          <li class="lista">Señalética</li>
+          <li class="lista">Papelería</li>
+          <li class="lista">Ilustración</li>
+          
+
+          </ul>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 Vue.component("card-component", {
   data() {
     return {
-      cards: [
+      cards: [ 
         {
           title: "GENERACIÓN DE CONTENIDO",
           content: "Nos preocupamos por entender lo que nuestros clientes quieren y realizar lo que necesitan logrando resultados personalizados.",
@@ -41,6 +41,14 @@ Vue.component("card-component", {
           buttonText: "Ver más",
           imageUrl: "disenio_web.gif",
             enlace:"./redes-sociales.html"
+        },
+        {
+          title: "INFLUENCERS",
+          content: "Entendemos el poder de la influencia digital. Conectamos marcas con líderes de opinión y creadores de contenido que impulsan resultados reales, aumentando el alcance, la confianza y el compromiso con tu audiencia.",
+          color: "#E9AFF2",
+          buttonText: "Ver más",
+          imageUrl: "influencers.gif",
+            enlace:"./influencers.html"
         },
       ],
       currentIndex: 0,

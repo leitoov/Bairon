@@ -163,8 +163,8 @@ color: rgba(255, 255, 255, 1);
 }
 
 .ui-button.yellow {
-background-color: #FFE380;
-border: 0.3px solid #FFE380;
+background-color: #FFD015;
+border: 0.3px solid #FFD015;
 border-bottom-width: 2.74px;
 border-right-width: 2.74px;
 color: black;
@@ -187,7 +187,7 @@ opacity: 0.8;
 .simple {
   box-shadow: none !important;
   margin: 0rem !important;
-  background-color: #FFC70080;
+  background-color: #F98C02;
   height: 300px !important;
   border: none !important;
 
@@ -496,7 +496,7 @@ font-size: 5rem;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  width: 60%;
+  width: 100%;
 }
 .banner-img-container {
 display: flex;
@@ -527,10 +527,22 @@ position: relative;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  width:  52%;
+  width:  100%;
   margin: 10px;
 }
+.lista {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  padding: 10px;
+  list-style-position: inside;
+}
 
+.lista::marker {
+  font-size: 1.5em;
+  color: #A4C8BA;
+}
 .title-content-img-text>p{
   font-size: 20px;
   font-weight: 400;
@@ -691,7 +703,7 @@ textarea {
 .form>button {
   margin: 20px auto;
   padding: 15px 40px;
-  background-color: #FFE380;
+  background-color: #FFD015;
   color: #333;
   font-weight: 600;
   border: 1px solid #333;
@@ -799,7 +811,7 @@ border-radius: 6px;
 
 .modal-header {
 color:white;
-background-color: #E26AE5;
+background-color: #EFA3F3;
 display: flex;
 justify-content: center; /* Centra el contenido horizontalmente */
 align-items: center; /* Centra el contenido verticalmente, si es necesario */
@@ -808,17 +820,20 @@ position: relative; /* Necesario para posicionar el botón de cierre */
 
 .modal-title {
 margin: 0; /* Elimina el margen por defecto del título */
-font-size: 1.5rem; /* Ajusta el tamaño del título según tus necesidades */
 text-align: center; /* Asegura que el texto del título esté centrado */
+font-family: 'Poppins', sans-serif;
+font-size: 3em;
+color: white;
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .btn-close {
 filter: invert(100%);
 color:white;
-margin-top: 4%!important;
-position: absolute; /* Posiciona el botón de cierre absolutamente */
-right: 15px; /* Ajusta la posición del botón de cierre desde el borde derecho */
-transform: translateY(-50%); /* Ajusta la posición vertical del botón de cierre */
+margin-top: 2%!important;
+position: absolute; 
+right: 15px; 
+transform: translateY(-50%); 
 }
 
 .modal-body {
@@ -838,6 +853,8 @@ border-top: 1px solid #dee2e6;
 color:#000;
 font-family: Helvetica;
 font-size: 20px;
+text-align: center;
+font-weight: 500;
 }
 
 .fade-in-bottom {
@@ -958,21 +975,6 @@ transform: translateY(0);
   --box-shadow-color: rgba(220, 233, 255, 0.48);
 }
 
-.animatecard {
-  width: 220px;
-  height: 321px;
-  background: #fff;
-  border-top-right-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
-  transition: all 0.3s ease-out;
-  text-decoration: none;
-}
 
 .animatecard:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
@@ -1010,6 +1012,65 @@ transform: translateY(0);
   z-index: 1000;
   transition: color 0.3s ease-out;
   text-align: center;
+}
+
+
+.animatecardcontainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+}
+
+.animatecard {
+  width: 220px;
+  height: 321px;
+  background: #fff;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
+
+.animatecard:nth-child(5){
+  grid-column: 2;
+}
+.animatecard:nth-child(6) {
+  grid-column: 3;
+}
+
+/* Mantén los estilos de hover y otros estilos específicos de .animatecard aquí */
+
+@media (max-width: 1000px) {
+  .animatecardcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .animatecard:nth-child(5),
+  .animatecard:nth-child(6) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .animatecardcontainer {
+    grid-template-columns: 1fr;
+  }
+
+  .animatecard {
+    width: 100%;
+    max-width: 220px;
+    justify-self: center;
+  }
 }
 
 .circle {
@@ -1063,32 +1124,6 @@ transform: translateY(0);
 
 
 
-.animatecardcontainer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-/* Para pantallas grandes */
-@media (min-width: 768px) {
-  .animatecard {
-    width: 220px; /* Mantén el ancho como en el código original */
-  }
-}
-
-/* Para pantallas móviles */
-@media (max-width: 767px) {
-  .animatecardcontainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .animatecard {
-    width: 100%;
-    max-width: 220px; /* Mantén el tamaño máximo */
-    margin-bottom: 20px;
-  }
-}
 
 /* Estilos para la animación de crecimiento */
 @keyframes growVideo {
