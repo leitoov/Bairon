@@ -9,7 +9,8 @@ Vue.component("footer-component", {
             <li><a href="#casos-exito"        style="  text-decoration: none !important;  color:#212529;">CASOS DE ÉXITO</a></li>
             <li><a href="#contacto"         style="  text-decoration: none !important;  color:#212529;"></a>CONTACTO</li>
           </ul>
-          <div class="icon">
+        </div>
+        <div class="icon">
             <img src="./images/Instagram.svg" alt="Twitter">
             <img src="./images/Linkedin.svg" alt="Facebook">
             <img src="./images/Tiktok.svg" alt="YouTube">
@@ -17,10 +18,7 @@ Vue.component("footer-component", {
             <img src="./images/Youtube.svg" alt="LinkedIn">
 
           </div>
-        </div>
-        <div>
-          
-        </div>
+        
       </div>
     `,
 });
