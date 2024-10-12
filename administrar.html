@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        select {
+            cursor: pointer;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+
+    <div class="container">
+        <!-- Cargar páginas en el selector -->
+        <div>
+            <h3>Seleccionar Página</h3>
+            <select name="pageId" id="pageId">
+                <option value="">Selecciona una página</option>
+            </select>
+            <button id="loadPages" style="margin-top: 10px;">Cargar Páginas</button>
+        </div>
+
+        <div id="blockContainer" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        // Cargar páginas en el select
+        function loadPages() {
+            fetch('api.php?action=getPages')
+            .then(response => response.json())
+            .then(data => {
+                const pageSelect = document.getElementById('pageId');
+                pageSelect.innerHTML = ''; // Limpiar el selector
+
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Selecciona una página';
+                pageSelect.appendChild(defaultOption); // Opción predeterminada
+
+                data.forEach(page => {
+                    let option = document.createElement('option');
+                    option.value = page.id;
+                    option.textContent = page.page_name;
+                    pageSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar las páginas:', error);
+            });
+        }
+
+        // Cargar los bloques de contenido de una página
+        function loadBlocks(pageName) {
+            fetch(`apiConsulta.php?pageName=${pageName}`)
+            .then(response => response.json())
+            .then(data => {
+                const blockContainer = document.getElementById('blockContainer');
+                blockContainer.innerHTML = '';
+
+                data.forEach(block => {
+                    const blockDiv = document.createElement('div');
+                    blockDiv.className = 'block';
+                    blockDiv.style.marginBottom = '20px';
+
+                    if (block.type === 'text') {
+                        const textContent = block.texts.map(text => `<p>${text.content_text}</p>`).join('');
+                        blockDiv.innerHTML = `
+                            <h3>Bloque de Texto (ID: ${block.block_id})</h3>
+                            ${textContent}
+                            <button onclick="editBlock(${block.block_id}, 'text')">Editar</button>
+                            <button onclick="deleteBlock(${block.block_id})">Eliminar</button>
+                        `;
+                    } else if (block.type === 'image') {
+                        blockDiv.innerHTML = `
+                            <h3>Bloque de Imagen (ID: ${block.block_id})</h3>
+                            <img src="${block.image.image_path}" alt="Imagen" style="width: 100%; max-width: 300px;">
+                            <button onclick="editBlock(${block.block_id}, 'image')">Editar</button>
+                            <button onclick="deleteBlock(${block.block_id})">Eliminar</button>
+                        `;
+                    }
+
+                    blockContainer.appendChild(blockDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar los bloques:', error);
+            });
+        }
+
+        // Editar un bloque
+        function editBlock(blockId, blockType) {
+            let content_es = '';
+            let content_en = '';
+
+            if (blockType === 'text') {
+                content_es = prompt('Editar texto en español:');
+                content_en = prompt('Editar texto en inglés:');
+            }
+
+            const formData = new FormData();
+            formData.append('action', 'editBlock');
+            formData.append('blockId', blockId);
+            formData.append('blockType', blockType);
+            formData.append('contentText_es', content_es);
+            formData.append('contentText_en', content_en);
+
+            fetch('apiConsulta.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.success);
+                loadBlocks(document.getElementById('pageId').value);
+            });
+        }
+
+        // Eliminar un bloque
+        function deleteBlock(blockId) {
+            if (confirm('¿Estás seguro de que deseas eliminar este bloque?')) {
+                const formData = new FormData();
+                formData.append('action', 'deleteBlock');
+                formData.append('blockId', blockId);
+
+                fetch('apiConsulta.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.success);
+                    loadBlocks(document.getElementById('pageId').value);
+                });
+            }
+        }
+
+        // Cargar las páginas en el select
+        document.getElementById('loadPages').addEventListener('click', function() {
+            const pageName = document.getElementById('pageId').value;
+            loadBlocks(pageName);
+        });
+
+        // Cargar automáticamente las páginas al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPages();
+        });
+    </script>
+</body>
+</html>

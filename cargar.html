@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+
+    <!-- Formulario para crear una nueva página -->
+    <form id="createPageForm">
+        <input type="text" name="pageName" id="pageName" placeholder="Nombre de la Página">
+        <button type="submit">Crear Página</button>
+    </form>
+
+    <!-- Seleccionar página -->
+    <div>
+        <select name="pageId" id="pageId"></select>
+        <button id="loadPages">Cargar Páginas</button>
+    </div>
+
+    <!-- Formulario para agregar bloques de texto -->
+    <form id="addTextBlockForm">
+        <textarea name="contentText_es" id="contentText_es" placeholder="Texto en español"></textarea>
+        <textarea name="contentText_en" id="contentText_en" placeholder="Texto en inglés"></textarea>
+        <button type="submit">Agregar Bloque de Texto</button>
+    </form>
+
+    <!-- Formulario para subir imágenes -->
+    <form id="addImageBlockForm" enctype="multipart/form-data">
+        <input type="file" name="image" id="image">
+        <button type="submit">Agregar Bloque de Imagen</button>
+    </form>
+
+    <script>
+        // Crear nueva página
+        document.getElementById('createPageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            formData.append('action', 'createPage');
+            
+            fetch('api.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => alert(data));
+        });
+
+        // Agregar bloque de texto
+        document.getElementById('addTextBlockForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            formData.append('action', 'addTextBlock');
+            formData.append('pageId', document.getElementById('pageId').value);
+            
+            fetch('api.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => alert(data));
+        });
+
+        // Subir bloque de imagen
+        document.getElementById('addImageBlockForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            formData.append('action', 'addImageBlock');
+            formData.append('pageId', document.getElementById('pageId').value);
+            
+            fetch('api.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => alert(data));
+        });
+
+        // Cargar páginas en el select
+        document.getElementById('loadPages').addEventListener('click', function() {
+            fetch('api.php?action=getPages')
+            .then(response => response.json())
+            .then(data => {
+                const pageSelect = document.getElementById('pageId');
+                pageSelect.innerHTML = '';
+                data.forEach(page => {
+                    let option = document.createElement('option');
+                    option.value = page.id;
+                    option.textContent = page.page_name;
+                    pageSelect.appendChild(option);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

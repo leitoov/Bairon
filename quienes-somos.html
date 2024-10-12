@@ -169,55 +169,54 @@
 </head>
 
 <body>
-    
+
     <div id="app-two">
-      
+
         <script>
         </script>
         <div class="container-full">
             <header-component></header-component>
         </div>
         <div class="container" style="padding-top: 80px;">
-           
+
             <div class="row fade-in-bottom" style="width: 90%;">
-                <div class="col" >
-                  <div style="display: flex; flex-direction: column;justify-content: space-around; height: 70%;">
-                    <h1 style="font-size:48px; text-align: center;"> ¡Hola! , ¡Molly y Martu!</h1>
-                    <p style="font-size: 24px; text-align: center; font-weight: 400;">Fundamos BAIRON MEDIA CONTENT<br>
-                        hace 6 años porque nos apasiona el marketing y las redes sociales. 
-                        <br>
+                <div class="col">
+                    <div style="display: flex; flex-direction: column;justify-content: space-around; height: 70%;">
+                        <h1 style="font-size:48px; text-align: center;"> ¡Hola! , ¡Molly y Martu!</h1>
+                        <p style="font-size: 24px; text-align: center; font-weight: 400;" id="texto1">
+                            
                         </p>
-                  </div>
+                    </div>
                 </div>
                 <div class="col" style="display:flex; justify-content: flex-end;">
-                  <img src="./images/Martu Molly.JPG" alt="Image" style="object-fit: cover ;width: 70%;object-position: top; height: 80%;border:3px solid #000000; border-radius: 26px;">
+                    <img id="imagen1" alt="Image"
+                        style="object-fit: cover ;width: 70%;object-position: top; height: 80%;border:3px solid #000000; border-radius: 26px;">
                 </div>
             </div>
 
 
             <div class="row fade-in-bottom" style="width: 90%;">
                 <div class="col" style="display: flex; justify-content: center;">
-                    <img src="./images/Martu y Molly 1.JPG" style="object-fit: cover; width: 100%; height: auto;border:3px solid #000000; border-radius: 26px;">
+                    <img id="imagen2"
+                        style="object-fit: cover; width: 100%; height: auto;border:3px solid #000000; border-radius: 26px;">
                 </div>
-                <div class="col" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
- <p style="font-size: 24px; text-align: center; font-weight: 400;">
-                       
-                        Creemos que con una estrategia de comunicación completa y dinámica se puede lograr un gran impacto aumentando su alcance.</p>
-                    <div style="
-    text-align: center;
-"><img style="width: 15%;height: auto;" src="./images/firma1.svg"><img src="./images/firma.jpeg " style="width: 15%;height: auto;">
-
-</div>
+                <div class="col"
+                    style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <p style="font-size: 24px; text-align: center; font-weight: 400;" id="texto2"></p>
+                    <div style="text-align: center;">
+                        <img style="width: 15%;height: auto;" src="./images/firma1.svg"><img src="./images/firma.jpeg "
+                            style="width: 15%;height: auto;">
+                    </div>
                 </div>
             </div>
-          
+
         </div>
         <footer-component></footer-component>
     </div>
     <script src="components/header-component.js"></script>
     <script src="components/footer-component.js"></script>
 
-   
+
     <script>
         new Vue({
             el: '#app-two'
@@ -247,7 +246,21 @@
 
             // Ejecuta la función al hacer scroll
             window.addEventListener('scroll', checkFade);
+            
         });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Llamada a la API para obtener los datos
+            fetch('https://nodotecno.online/bairon-test/apiConsulta.php?pageName=Quienes%20somos')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos recibidos de la API:', data);
+                    document.getElementById('texto1').textContent = data[0].texts[0].content_text;
+                    document.getElementById('imagen1').src = 'https://nodotecno.online/bairon-test/'+data[1].image.image_path; 
+                    document.getElementById('texto2').textContent = data[2].texts[0].content_text;
+                    document.getElementById('imagen2').src = 'https://nodotecno.online/bairon-test/'+data[3].image.image_path;
+                })
+                .catch(error => console.error('Error al obtener los datos de la API:', error));
+            });
     </script>
 </body>
 
