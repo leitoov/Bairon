@@ -723,7 +723,7 @@ textarea {
     display: flex;
     width: 100%;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: center!important;
     align-items: center;
     flex-wrap: wrap;
   
@@ -742,9 +742,10 @@ textarea {
     display: flex;
     gap: 2rem;
     margin-top: 2%;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center!important;
+
   }
 }
 .footer>div {
