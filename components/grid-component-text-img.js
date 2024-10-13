@@ -51,6 +51,7 @@ style.textContent = `
   @media (max-width: 800px) {
     .slide-in-left {
       justify-content: flex-start;
+      padding: 0px;
     }
     .title-content{
       gap: 2rem;
@@ -59,7 +60,7 @@ style.textContent = `
       font-size:23px;
     }
     .title-content>p{
-      font-size:20px;
+      font-size:16px;
     }
   }
 `;
