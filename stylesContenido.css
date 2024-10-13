@@ -719,11 +719,22 @@ textarea {
 
 }
 @media screen and (max-width: 800px) {
+  .img-bairon{
+    width: 50%!important;
+  }
+  .fondo>div>h1 {
+    font-size: 50px;
+    margin-top: 30%;
+    margin-bottom: 3%;
+  }
   .botones-header{
-    margin-left: 0%;
+    margin-left: 0%!important;
   }
   #exploraBtn{
-    margin-left: 0px;
+    margin-left: 0%!important;
+    padding-bottom: 4%;
+    text-align: center!important;
+    margin: auto!important;
   }
   .fondo {
     height: auto;
