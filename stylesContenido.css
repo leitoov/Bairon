@@ -752,10 +752,23 @@ textarea {
   .videos-header{
     display: none;
   }
+  .banner-logo {
+    left: 3rem;
+  }
+  .titleContainer>h1{
+    top: 23%;
+  }
+  .titleContainer{
+    display: block;
+    width: 100%;
+  }
+  .w3-animate-top {
+    margin-bottom: 3vh;
+  }
   .nuestros-servicios{
     font-size: 34px!important;
     margin-bottom: 6vh!important;
-    margin-left:0px!important;
+    margin-left:20px!important;
   }
   .banner-img{
     display: none;
