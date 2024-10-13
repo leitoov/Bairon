@@ -124,7 +124,7 @@ Vue.component('grid-component', {
               margin-top: 20px;
             }
             .subtitle-animation {
-              font-size: 40px;
+              font-size: 35px;
             }
           }
         `;
