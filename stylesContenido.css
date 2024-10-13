@@ -719,6 +719,15 @@ textarea {
 
 }
 @media screen and (max-width: 800px) {
+  .card-simple {
+    height: 130px;
+  }
+  .amarillo{
+        margin-right: 20px;
+  }
+  .ui-button{
+    width: 160px;
+  }
   .img-bairon{
     width: 50%!important;
   }
@@ -728,11 +737,12 @@ textarea {
     margin-bottom: 3%;
   }
   .botones-header{
+    text-align: center;
     margin-left: 0%!important;
+    margin-top: 5%;
   }
   #exploraBtn{
     margin-left: 0%!important;
-    padding-bottom: 4%;
     text-align: center!important;
     margin: auto!important;
   }
