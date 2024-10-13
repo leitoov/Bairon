@@ -8,68 +8,54 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="./stylesContenido.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./stylesContenido.css">
 </head>
 
 <body>
   <div id="app">
     <!-- Modal -->
-<div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">NEWSLETTER</h5>
-        <button type="button" style="top:10px;"class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="subscriptionForm">
-          <p class="modal-description">
-            Mantenete al dia de nuestras novedades
-          </p>
-          <div class="mb-3">
-            <input type="email" class="form-control modal-input" id="email" required placeholder="Email">
+    <div class="modal fade" id="subscriptionModal" tabindex="-1" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">NEWSLETTER</h5>
+            <button type="button" style="top:10px;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <button type="submit" class="ui-button yellow" style="margin: auto;
-          display: block;
-          margin-top: 6%;
-          width: 140px;
-          height: 50px;">Contactanos</button>
-
-        </form>
+          <div class="modal-body">
+            <form id="subscriptionForm">
+              <p class="modal-description">Mantenete al día de nuestras novedades</p>
+              <div class="mb-3">
+                <input type="email" class="form-control modal-input" id="email" required placeholder="Email">
+              </div>
+              <button type="submit" class="ui-button yellow" style="margin: auto; display: block; margin-top: 6%; width: 140px; height: 50px;">Contactanos</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div id="videoContainer" style="display:none; position: relative; width: 100%; z-index: 1004;">
-  <video id="videoExplora" style="width: 100%;">
-    <source src="./videos/inicio.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
-  <button id="closeButton">X</button>
-</div>
-
+    <div id="videoContainer" style="display:none; position: relative; width: 100%; z-index: 1004;">
+      <video id="videoExplora" style="width: 100%;">
+        <source src="./videos/inicio.mp4" type="video/mp4">Tu navegador no soporta el video.
+      </video>
+      <button id="closeButton">X</button>
+    </div>
 
     <div id="overlay" class="overlay"></div>
 
     <div class="fondo">
       <video autoplay muted loop id="background-video">
-        <source src="./images/header.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
+        <source src="./images/header.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
       </video>
       <header-component></header-component>
       <div class="header">
-        <h1>
-          Bienvenidos<br>
-          al planeta<br>
-          <img src="./images/bairon.png" style="width: 20%;" class="img-bairon"/>
+        <h1>Bienvenidos<br>al planeta<br>
+          <img src="./images/bairon.png" style="width: 20%;" class="img-bairon" />
         </h1>
       </div>
       <div style="margin-left: 5%; padding-bottom: 4%;" class="botones-header">
@@ -84,57 +70,52 @@ rel="stylesheet">
         </div>
       </div>
     </div>
+
     <div class="contenedor fade-in-bottom">
       <div>
         <div class="card-simple w3-animate-top fade-in-bottom" id="quienes-somos">
           <div class="card simple">
             <div class="card-content-simple">
-              <h4 style="font-size: 34px;">Impulsando marcas con servicios expertos en diseño y postproducción:
-                el distintivo toque de Bairon Media Content.</h4>
+              <h4 style="font-size: 34px;">Impulsando marcas con servicios expertos en diseño y postproducción: el distintivo toque de Bairon Media Content.</h4>
             </div>
           </div>
         </div>
-
 
         <div class="w3-animate-top">
           <h2 class="nuestros-servicios fade-in-bottom servicios-title">Nuestros servicios</h2>
           <div class="w3-animate-top-background fade-in-bottom"></div>
           <card-component id="servicios fade-in-bottom"></card-component>
         </div>
-
-
       </div>
+
       <div class="container-two">
-        <h2 class="nuestros-servicios fade-in-bottom" id="caso-exito">
-          Nuestro Impacto
-        </h2>
+        <h2 class="nuestros-servicios fade-in-bottom" id="caso-exito">Nuestro Impacto</h2>
         <div class="carousel-banner-container fade-in-bottom">
           <banner-component class="fade-in-bottom"></banner-component>
         </div>
 
         <div class="marcas fade-in-bottom">
-          <h2 class="nuestros-servicios a-quien-acompaniamos" style="margin-top:25vh;">A quienes acompañamos</h1>
+          <h2 class="nuestros-servicios a-quien-acompaniamos" style="margin-top:25vh;">A quienes acompañamos</h2>
         </div>
       </div>
     </div>
+
     <div>
       <marcas-component class="marcas-component" style="margin: 0vh 0vh 15vh 0vh;"></marcas-component>
       <div class="img-footer fade-in-bottom">
         <video autoplay muted loop class="footer-video">
-          <source src="./images/header.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
+          <source src="./images/header.mp4" type="video/mp4">Tu navegador no soporta el elemento de video.
         </video>
-        <div class="footer-content">
-          CONSEGUÍ TU BOARDING PASS
-        </div>
+        <div class="footer-content">CONSEGUÍ TU BOARDING PASS</div>
       </div>
     </div>
-    
+
     <div class="contenedor fade-in-bottom" style="margin-top: 10vh;margin-bottom: 10vh;">
       <formulario-component id="contacto"></formulario-component>
     </div>
     <footer-component></footer-component>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="components/header-component.js"></script>
   <script src="components/footer-component.js"></script>
@@ -143,22 +124,32 @@ rel="stylesheet">
   <script src="components/card-component.js"></script>
   <script src="components/banner-component.js"></script>
   <script src="components/UI/ui-button.js"></script>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var myModal = new bootstrap.Modal(document.getElementById('subscriptionModal'), {
-        keyboard: false
-      });
-      myModal.show();
-    });
-  
-    document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      var email = document.getElementById('email').value;
-      if (email) {
-        alert('Gracias por suscribirte con el correo: ' + email);
-        bootstrap.Modal.getInstance(document.getElementById('subscriptionModal')).hide();
-        // Aquí puedes agregar lógica para enviar el correo electrónico al servidor.
+      // Verificar si ya se ha mostrado el modal antes
+      var isModalShown = localStorage.getItem('subscriptionModalShown');
+
+      // Si el modal no ha sido mostrado antes, mostrarlo
+      if (!isModalShown) {
+        var myModal = new bootstrap.Modal(document.getElementById('subscriptionModal'), {
+          keyboard: false
+        });
+        myModal.show();
       }
+
+      // Evento cuando el formulario se envía
+      document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var email = document.getElementById('email').value;
+        if (email) {
+          alert('Gracias por suscribirte con el correo: ' + email);
+          bootstrap.Modal.getInstance(document.getElementById('subscriptionModal')).hide();
+
+          // Guardar en localStorage que el modal ya fue mostrado
+          localStorage.setItem('subscriptionModalShown', 'true');
+        }
+      });
     });
   </script>
 
@@ -167,9 +158,10 @@ rel="stylesheet">
       el: '#app'
     });
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var fadeElements = document.querySelectorAll('.fade-in-bottom');
@@ -185,80 +177,70 @@ rel="stylesheet">
         });
       }
 
-      // Ejecuta la función al cargar la página
       checkFade();
-
-      // Ejecuta la función al hacer scroll
       window.addEventListener('scroll', checkFade);
     });
+
     document.getElementById('exploraBtn').addEventListener('click', function() {
-  var video = document.getElementById('videoExplora');
-  var videoContainer = document.getElementById('videoContainer');
-  var closeButton = document.getElementById('closeButton');
+      var video = document.getElementById('videoExplora');
+      var videoContainer = document.getElementById('videoContainer');
+      var closeButton = document.getElementById('closeButton');
 
-  // Mostrar el contenedor del video con la animación de crecimiento
-  videoContainer.style.display = 'block';
-  videoContainer.classList.add('grow');
-  video.play();
+      videoContainer.style.display = 'block';
+      videoContainer.classList.add('grow');
+      video.play();
 
-  // Solicitar pantalla completa
-  if (videoContainer.requestFullscreen) {
-    videoContainer.requestFullscreen();
-  } else if (videoContainer.mozRequestFullScreen) { // Firefox
-    videoContainer.mozRequestFullScreen();
-  } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-    videoContainer.webkitRequestFullscreen();
-  } else if (videoContainer.msRequestFullscreen) { // IE/Edge
-    videoContainer.msRequestFullscreen();
-  }
-
-  // Detectar si el video está en pantalla completa para mostrar la "X"
-  function toggleCloseButton() {
-    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-      closeButton.style.display = 'block'; // Mostrar la "X" en pantalla completa
-    } else {
-      closeButton.style.display = 'none'; // Ocultar la "X" cuando no esté en pantalla completa
-    }
-  }
-
-  // Escuchar los eventos de cambio de pantalla completa
-  document.addEventListener('fullscreenchange', toggleCloseButton);
-  document.addEventListener('webkitfullscreenchange', toggleCloseButton);
-  document.addEventListener('mozfullscreenchange', toggleCloseButton);
-  document.addEventListener('msfullscreenchange', toggleCloseButton);
-
-  // Función para cerrar el video
-  function closeVideo() {
-    videoContainer.classList.add('shrink');
-    video.pause();
-    setTimeout(function() {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) { // Firefox
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) { // IE/Edge
-        document.msExitFullscreen();
+      if (videoContainer.requestFullscreen) {
+        videoContainer.requestFullscreen();
+      } else if (videoContainer.mozRequestFullScreen) { // Firefox
+        videoContainer.mozRequestFullScreen();
+      } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        videoContainer.webkitRequestFullscreen();
+      } else if (videoContainer.msRequestFullscreen) { // IE/Edge
+        videoContainer.msRequestFullscreen();
       }
 
-      // Ocultar el contenedor del video
-      videoContainer.style.display = 'none';
-      closeButton.style.display = 'none';
-      videoContainer.classList.remove('grow', 'shrink');
-    }, 500);
-  }
+      function toggleCloseButton() {
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+          closeButton.style.display = 'block'; 
+        } else {
+          closeButton.style.display = 'none'; 
+        }
+      }
 
-  // Cerrar el video al hacer clic en la "X"
-  closeButton.addEventListener('click', function() {
-    closeVideo();
-  });
+      document.addEventListener('fullscreenchange', toggleCloseButton);
+      document.addEventListener('webkitfullscreenchange', toggleCloseButton);
+      document.addEventListener('mozfullscreenchange', toggleCloseButton);
+      document.addEventListener('msfullscreenchange', toggleCloseButton);
 
-  // Salir de pantalla completa al terminar el video
-  video.onended = function() {
-    closeVideo();
-  };
-});
+      function closeVideo() {
+        videoContainer.classList.add('shrink');
+        video.pause();
+        setTimeout(function() {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) { 
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) { 
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { 
+            document.msExitFullscreen();
+          }
+
+          videoContainer.style.display = 'none';
+          closeButton.style.display = 'none';
+          videoContainer.classList.remove('grow', 'shrink');
+        }, 500);
+      }
+
+      closeButton.addEventListener('click', function() {
+        closeVideo();
+      });
+
+      video.onended = function() {
+        closeVideo();
+      };
+    });
   </script>
 </body>
 

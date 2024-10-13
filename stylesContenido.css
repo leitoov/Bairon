@@ -759,7 +759,7 @@ textarea {
     top: 23%;
   }
   .modal-input{
-    width: 100%;
+    width: 100%!important;
     }
   .container{
     width: 100%!important;
