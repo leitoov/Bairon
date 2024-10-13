@@ -29,6 +29,11 @@ Vue.component('grid-component-4', {
         const style = document.createElement('style');
         style.id = 'grid-component-4-styles';
         style.textContent = `
+        @media screen and (max-width: 800px) {
+          .fade-in-bottom.is-visible{
+              width: 100%!important;
+          }
+        }
           .fade-in-grid {
             opacity: 0;
             transform: translateY(20px);

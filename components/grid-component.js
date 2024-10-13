@@ -74,6 +74,11 @@ Vue.component('grid-component', {
           .slide-in-right {
             transform: translateX(50px);
           }
+             @media screen and (max-width: 800px) {
+              .fade-in-bottom.is-visible{
+                  width: 100%!important;
+              }
+            }
           
           .fade-in-bottom.is-visible .slide-in-left,
           .fade-in-bottom.is-visible .slide-in-right {
@@ -105,7 +110,7 @@ Vue.component('grid-component', {
             transition-delay: 0.6s;
           }
 
-          @media (max-width: 768px) {
+          @media (max-width: 800px) {
             .grid-component-container {
               flex-direction: column;
             }
@@ -114,6 +119,7 @@ Vue.component('grid-component', {
               padding-right: 0;
             }
             .image-container {
+              display:none;
               justify-content: center;
               margin-top: 20px;
             }
