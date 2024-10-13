@@ -719,6 +719,16 @@ textarea {
 
 }
 @media screen and (max-width: 800px) {
+  .nuestros-servicios{
+    font-family: "Open Sans", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 6vh;
+    margin-left:0px;
+  }
+  .banner-img{
+    display: none;
+  }
   .footer>div {
     display: flex;
     width: 100%;
@@ -729,6 +739,8 @@ textarea {
   
   }
   .footer>div>ul {
+    padding-left: 0px!important;
+    margin-left: 0px!important;
     margin: auto 0;
     display: flex;
     gap: 2rem;
@@ -1096,7 +1108,7 @@ transform: translateY(0);
 
   .animatecard {
     width: 100%;
-    max-width: 220px;
+    max-width: 320px;
     justify-self: center;
   }
 }
