@@ -44,9 +44,23 @@ style.textContent = `
   .slide-in-left {
     animation: slideInLeft 1s ease-out;
   }
-
   .slide-in-right {
     animation: slideInRight 1s ease-out;
+  }
+
+  @media (max-width: 800px) {
+    .slide-in-left {
+      justify-content: flex-start;
+    }
+    .title-content{
+      gap: 2rem;
+    }
+    .title-content>h1{
+      font-size:23px;
+    }
+    .title-content>p{
+      font-size:20px;
+    }
   }
 `;
 document.head.appendChild(style);
