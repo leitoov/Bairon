@@ -758,6 +758,9 @@ textarea {
   .titleContainer>h1{
     top: 23%;
   }
+  .container{
+    width: 100%!important;
+  }
   .col-9{
     width: 100%;
   }
