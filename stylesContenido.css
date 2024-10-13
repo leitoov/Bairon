@@ -719,6 +719,18 @@ textarea {
 
 }
 @media screen and (max-width: 800px) {
+  .botones-header{
+    margin-left: 0%;
+  }
+  #exploraBtn{
+    margin-left: 0px;
+  }
+  .fondo {
+    height: auto;
+  }
+  .videos-header{
+    display: none;
+  }
   .nuestros-servicios{
     font-size: 34px!important;
     margin-bottom: 6vh!important;
