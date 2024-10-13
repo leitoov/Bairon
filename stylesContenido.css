@@ -758,6 +758,9 @@ textarea {
   .titleContainer>h1{
     top: 23%;
   }
+  .col-9{
+    width: 100%;
+  }
   .marcas-component{
     margin: 0vh 0vh 5vh 0vh;
   }
