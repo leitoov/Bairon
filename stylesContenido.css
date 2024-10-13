@@ -758,8 +758,14 @@ textarea {
   .titleContainer>h1{
     top: 23%;
   }
+  .modal-input{
+    width: 100%;
+    }
   .container{
     width: 100%!important;
+  }
+  .modal-open{
+    padding-right: inherit!important;
   }
   .col-9{
     width: 100%;
