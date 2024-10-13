@@ -758,6 +758,18 @@ textarea {
   .titleContainer>h1{
     top: 23%;
   }
+  .marcas-component{
+    margin: 0vh 0vh 5vh 0vh;
+  }
+  .a-quien-acompaniamos{
+    margin-top:12vh;
+  }
+  .banner {
+    height: 50vh;
+  }
+  .servicios-title{
+    margin-top:40%;
+  }
   .titleContainer{
     display: block;
     width: 100%;
