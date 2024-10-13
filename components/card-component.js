@@ -81,7 +81,7 @@ Vue.component("card-component", {
 
   methods: {
     getImageUrl(img) {
-      return "./videos/" + img;
+      return "./video/" + img;
     },
 
     startAutoChange() {
