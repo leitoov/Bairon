@@ -402,6 +402,9 @@ overflow: hidden;
 color: white;
 text-align: center;
 margin-top: 1%;
+background-image: url('./images/fondo-footer.png');
+background-repeat: no-repeat; /* Evita la repetición */
+background-position: center; /* Centra la imagen */
 }
 
 .footer-video {
@@ -416,8 +419,22 @@ z-index: -1; /* Asegura que el video esté detrás del contenido */
 
 .footer-content {
 position: relative;
-z-index: 1; /* Asegura que el contenido esté encima del video */
-font-size: 5rem;
+background: white;
+height: 226px;
+color: #C7AFE9;
+margin: auto;
+text-align: center;
+justify-content: center;
+display: flex;
+align-items: center;
+font-size: 48px;
+width: 100%;
+padding-left: 130px;
+padding-right: 130px;
+font-family: 'Poppins', sans-serif;
+text-shadow: 1px 0px 0px black, 0px 1px 0px black, -1px 0px 0px black, 0px -1px 0px black;
+font-weight: 700;
+border-radius: 10px;
 }
 
 .banner.back {
@@ -475,16 +492,15 @@ font-size: 5rem;
 
 .titleContainer>h1 {
   margin: 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: white !important;
   font-size: 5rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 900;
-  position:absolute;
-  left:1rem;
-  top:35%;
-  text-shadow:  1px  0px 0px black,
-           0px  1px 0px black,
-          -1px  0px 0px black,
-           0px -1px 0px black;;
+  position: absolute;
+  left: 1rem;
+  top: 35%;
+  text-shadow: 1px 0px 0px black, 0px 1px 0px black, -1px 0px 0px black, 0px -1px 0px black;
 }
 
 
@@ -642,6 +658,8 @@ display:flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2rem;
+  width: 70%;
+  margin: auto;
 }
 .grid-container {
   display: grid;
@@ -719,6 +737,16 @@ textarea {
 
 }
 @media screen and (max-width: 800px) {
+  .footer-content {
+    font-size: 35px;
+    width: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+  .form{
+    width: 100%;
+  }
   .card-simple {
     height: 130px;
   }
@@ -817,7 +845,7 @@ textarea {
     align-items: center;
     flex-wrap: wrap;
   }
-  .footer>div>.icon{
+  .footer>.icon{
     margin: auto 0;
     display: flex;
     gap: 2rem;
@@ -825,7 +853,12 @@ textarea {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center!important;
-
+  }
+  .overlay{
+    display: none;
+  }
+  .animatecard{
+    box-shadow: 0px 0px 17px rgb(33 41 83 / 38%);
   }
 }
 .footer>div {
@@ -855,6 +888,10 @@ textarea {
   gap: 20px;
   display: flex;
   margin-right: 1rem;
+}
+.footer>.icon{
+  justify-content: end;
+
 }
 
 

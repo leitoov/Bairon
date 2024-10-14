@@ -19,7 +19,7 @@ Vue.component("banner-component", {
           class: "item-2",
         },
         {
-          title: "+100 MIL",
+          title: "+100k",
           content: "Clientes nuevos en un año",
           color: "#C7AFE9",
           imageUrl: ["dermaglosImg2.svg", "dermaglosImg1.svg"],
